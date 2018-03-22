@@ -32,5 +32,10 @@ namespace HabitatReStoreWFApp
                 main.Show();
             }
         }
+
+        private void imgLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

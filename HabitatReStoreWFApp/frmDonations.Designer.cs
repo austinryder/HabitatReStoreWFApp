@@ -1,6 +1,6 @@
 ﻿namespace HabitatReStoreWFApp
 {
-    partial class frmDonations
+    partial class frmDonations : baseForm
     {
         /// <summary>
         /// Required designer variable.
