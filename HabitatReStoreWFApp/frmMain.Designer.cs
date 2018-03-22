@@ -1,6 +1,6 @@
 ﻿namespace HabitatReStoreWFApp
 {
-    partial class frmMain
+    partial class frmMain : baseForm
     {
         /// <summary>
         /// Required designer variable.
