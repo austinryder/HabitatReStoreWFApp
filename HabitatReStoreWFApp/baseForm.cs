@@ -45,5 +45,21 @@ namespace HabitatReStoreWFApp
                 Application.Exit();
             }
         }
+
+        private void dailyDonationPickupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDailyPickups dailyPickups = new frmDailyPickups();
+            Hide();
+            dailyPickups.ShowDialog();
+            Show();
+        }
+
+        private void volunteerHoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVolunteerHours volunteerHours = new frmVolunteerHours();
+            Hide();
+            volunteerHours.ShowDialog();
+            Show();
+        }
     }
 }

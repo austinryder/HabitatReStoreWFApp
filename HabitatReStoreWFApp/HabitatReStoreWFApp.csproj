@@ -76,6 +76,12 @@
     <Compile Include="baseForm.Designer.cs">
       <DependentUpon>baseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDailyPickups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDailyPickups.Designer.cs">
+      <DependentUpon>frmDailyPickups.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +112,20 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVolunteerHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVolunteerHours.Designer.cs">
+      <DependentUpon>frmVolunteerHours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="baseForm.resx">
       <DependentUpon>baseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDailyPickups.resx">
+      <DependentUpon>frmDailyPickups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonations.resx">
       <DependentUpon>frmDonations.cs</DependentUpon>
@@ -126,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVolunteerHours.resx">
+      <DependentUpon>frmVolunteerHours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +172,9 @@
   <ItemGroup>
     <Content Include="Images\logo-2.png" />
     <Content Include="Images\logo.png" />
+    <None Include="Resources\habitat-for-humanity-restore-logo.png" />
+    <Content Include="Images\RestoreFront2.jpg" />
+    <None Include="Resources\familyLogo.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -166,7 +187,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

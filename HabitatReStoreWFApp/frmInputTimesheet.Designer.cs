@@ -1,6 +1,6 @@
 ﻿namespace HabitatReStoreWFApp
 {
-    partial class frmInputTimesheet
+    partial class frmInputTimesheet : baseForm
     {
         /// <summary>
         /// Required designer variable.
