@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Habitat_Restore_V2" Class="HabitatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:50.63.178.68,49172;Initial Catalog=Habitat_Restore_V2;User ID=crewsb2268" SettingsObjectName="HabitatReStoreWFApp.Properties.Settings" SettingsPropertyName="Habitat_Restore_V2ConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Donation" Member="Donations">
+    <Type Name="Donation">
+      <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Store_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Donor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Map_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Bypass_Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Donation_Donation_PickUp_Schedule" Member="Donation_PickUp_Schedule" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Donation_PickUp_Schedule" Cardinality="One" />
+      <Association Name="Donation_Item" Member="Items" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Item" />
+      <Association Name="Donor_Donation" Member="Donor" ThisKey="Donor_ID" OtherKey="Donor_ID" Type="Donor" IsForeignKey="true" />
+      <Association Name="Status_Map_Donation" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
+      <Association Name="Store_Donation" Member="Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Store" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Donation_PickUp_Schedule" Member="Donation_PickUp_Schedules">
+    <Type Name="Donation_PickUp_Schedule">
+      <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PickUp_Window_Start" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PickUp_Window_End" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Special_Instructions" Type="System.String" DbType="VarChar(2047)" CanBeNull="true" />
+      <Column Name="Completed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Completed_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Donation_Donation_PickUp_Schedule" Member="Donation" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Donation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Donor" Member="Donors">
+    <Type Name="Donor">
+      <Column Name="Donor_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status_Map_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Donor_Donation" Member="Donations" ThisKey="Donor_ID" OtherKey="Donor_ID" Type="Donation" />
+      <Association Name="Status_Map_Donor" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Driver" Member="Drivers">
+    <Type Name="Driver">
+      <Column Name="Driver_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status_Map_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="NChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Driver_Vehicle_Driver" Member="Vehicle_Drivers" ThisKey="Driver_ID" OtherKey="Driver_ID" Type="Vehicle_Driver" />
+      <Association Name="Status_Map_Driver" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item_Category" Member="Item_Categories">
+    <Type Name="Item_Category">
+      <Column Name="Item_Category_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Item_Category_Item" Member="Items" ThisKey="Item_Category_ID" OtherKey="Item_Category_ID" Type="Item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_Category_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Donation_Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Item_Category_Item" Member="Item_Category" ThisKey="Item_Category_ID" OtherKey="Item_Category_ID" Type="Item_Category" IsForeignKey="true" />
+      <Association Name="Donation_Item" Member="Donation" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Donation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manager_LogIn" Member="Manager_LogIns">
+    <Type Name="Manager_LogIn">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status_Entity_Map" Member="Status_Entity_Maps">
+    <Type Name="Status_Entity_Map">
+      <Column Name="Status_Entity_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Entity_Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Entity_Map_Status_Map" Member="Status_Maps" ThisKey="Status_Entity_ID" OtherKey="Status_Entity_ID" Type="Status_Map" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status_Map" Member="Status_Maps">
+    <Type Name="Status_Map">
+      <Column Name="Status_Map_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status_Entity_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Map_Donation" Member="Donations" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Donation" />
+      <Association Name="Status_Map_Donor" Member="Donors" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Donor" />
+      <Association Name="Status_Map_Driver" Member="Drivers" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Driver" />
+      <Association Name="Status_Map_Volunteer" Member="Volunteers" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Volunteer" />
+      <Association Name="Status_Entity_Map_Status_Map" Member="Status_Entity_Map" ThisKey="Status_Entity_ID" OtherKey="Status_Entity_ID" Type="Status_Entity_Map" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Store" Member="Stores">
+    <Type Name="Store">
+      <Column Name="Store_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Store_Donation" Member="Donations" ThisKey="Store_ID" OtherKey="Store_ID" Type="Donation" />
+      <Association Name="Store_Vehicle" Member="Vehicles" ThisKey="Store_ID" OtherKey="Store_ID" Type="Vehicle" />
+      <Association Name="Store_Volunteer_Schedule" Member="Volunteer_Schedules" ThisKey="Store_ID" OtherKey="Store_ID" Type="Volunteer_Schedule" />
+      <Association Name="Store_ZipCode_Range" Member="ZipCode_Ranges" ThisKey="Store_ID" OtherKey="Store_ID" Type="ZipCode_Range" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle" Member="Vehicles">
+    <Type Name="Vehicle">
+      <Column Name="Vehicle_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Store_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_Size_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mileage" Type="System.Decimal" DbType="Decimal(8,1)" CanBeNull="true" />
+      <Column Name="Next_Maintenance" Type="System.Decimal" DbType="Decimal(8,1)" CanBeNull="true" />
+      <Association Name="Vehicle_Vehicle_Driver" Member="Vehicle_Drivers" ThisKey="Vehicle_ID" OtherKey="Vehicle_ID" Type="Vehicle_Driver" />
+      <Association Name="Vehicle_Vehicle_Tracking" Member="Vehicle_Trackings" ThisKey="Vehicle_ID" OtherKey="Vehicle_ID" Type="Vehicle_Tracking" />
+      <Association Name="Store_Vehicle" Member="Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Store" IsForeignKey="true" />
+      <Association Name="Vehicle_Size_Vehicle" Member="Vehicle_Size" ThisKey="Vehicle_Size_ID" OtherKey="Vehicle_Size_ID" Type="Vehicle_Size" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle_Driver" Member="Vehicle_Drivers">
+    <Type Name="Vehicle_Driver">
+      <Column Name="Vehicle_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Driver_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_In" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Out" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Driver_Vehicle_Driver" Member="Driver" ThisKey="Driver_ID" OtherKey="Driver_ID" Type="Driver" IsForeignKey="true" />
+      <Association Name="Vehicle_Vehicle_Driver" Member="Vehicle" ThisKey="Vehicle_ID" OtherKey="Vehicle_ID" Type="Vehicle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle_Size" Member="Vehicle_Sizes">
+    <Type Name="Vehicle_Size">
+      <Column Name="Vehicle_Size_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Volume" Type="System.Decimal" DbType="Decimal(6,1)" CanBeNull="true" />
+      <Association Name="Vehicle_Size_Vehicle" Member="Vehicles" ThisKey="Vehicle_Size_ID" OtherKey="Vehicle_Size_ID" Type="Vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle_Tracking" Member="Vehicle_Trackings">
+    <Type Name="Vehicle_Tracking">
+      <Column Name="Vehicle_Tracking_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vehicle_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GPS_Lat" Type="System.Decimal" DbType="Decimal(9,6) NOT NULL" CanBeNull="false" />
+      <Column Name="GPS_Long" Type="System.Decimal" DbType="Decimal(9,6) NOT NULL" CanBeNull="false" />
+      <Column Name="GPS_Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Vehicle_Vehicle_Tracking" Member="Vehicle" ThisKey="Vehicle_ID" OtherKey="Vehicle_ID" Type="Vehicle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer" Member="Volunteers">
+    <Type Name="Volunteer">
+      <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status_Map_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SSN" Type="System.String" DbType="NChar(9)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Volunteer_Volunteer_Category" Member="Volunteer_Categories" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer_Category" />
+      <Association Name="Volunteer_Volunteer_Schedule" Member="Volunteer_Schedules" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer_Schedule" />
+      <Association Name="Status_Map_Volunteer" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer_Category" Member="Volunteer_Categories">
+    <Type Name="Volunteer_Category">
+      <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Volunteer_Volunteer_Category" Member="Volunteer" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer" IsForeignKey="true" />
+      <Association Name="Volunteer_Category_Type_Volunteer_Category" Member="Volunteer_Category_Type" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Category_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer_Category_Type" Member="Volunteer_Category_Types">
+    <Type Name="Volunteer_Category_Type">
+      <Column Name="Category_Type_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Volunteer_Category_Type_Volunteer_Category" Member="Volunteer_Categories" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Category" />
+      <Association Name="Volunteer_Category_Type_Volunteer_Schedule" Member="Volunteer_Schedules" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer_Schedule" Member="Volunteer_Schedules">
+    <Type Name="Volunteer_Schedule">
+      <Column Name="Volunteer_Schedule_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Store_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sign_In" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sign_Out" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Volunteer_Category_Type_Volunteer_Schedule" Member="Volunteer_Category_Type" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Category_Type" IsForeignKey="true" />
+      <Association Name="Store_Volunteer_Schedule" Member="Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Store" IsForeignKey="true" />
+      <Association Name="Volunteer_Volunteer_Schedule" Member="Volunteer" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZipCode_Range" Member="ZipCode_Ranges">
+    <Type Name="ZipCode_Range">
+      <Column Name="Zip_Code_Range_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Store_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Store_ZipCode_Range" Member="Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Store" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

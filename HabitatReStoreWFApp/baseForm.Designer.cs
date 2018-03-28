@@ -1,6 +1,8 @@
-﻿namespace HabitatReStoreWFApp
+﻿using System.Windows.Forms;
+
+namespace HabitatReStoreWFApp
 {
-    partial class baseForm
+    partial class baseForm : Form
     {
         /// <summary>
         /// Required designer variable.

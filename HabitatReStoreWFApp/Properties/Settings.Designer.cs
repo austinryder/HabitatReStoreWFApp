@@ -12,7 +12,7 @@ namespace HabitatReStoreWFApp.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -31,6 +31,28 @@ namespace HabitatReStoreWFApp.Properties {
         public string Habitat_Restore_V2ConnectionString {
             get {
                 return ((string)(this["Habitat_Restore_V2ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=tcp:50.63.178.68,49172;Initial Catalog=Habitat_Restore_V2;User ID=ryd" +
+            "era0988;Password=1Password!")]
+        public string Habitat_Restore_V2ConnectionString1 {
+            get {
+                return ((string)(this["Habitat_Restore_V2ConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=tcp:50.63.178.68,49172;Initial Catalog=Habitat_Restore_V2;User ID=cre" +
+            "wsb2268;Password=1Password!")]
+        public string Habitat_Restore_V2ConnectionString2 {
+            get {
+                return ((string)(this["Habitat_Restore_V2ConnectionString2"]));
             }
         }
     }
