@@ -61,5 +61,13 @@ namespace HabitatReStoreWFApp
             volunteerHours.ShowDialog();
             Show();
         }
+
+        private void pickupScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddPickup addPickup = new frmAddPickup();
+            Hide();
+            addPickup.ShowDialog();
+            Show();
+        }
     }
 }

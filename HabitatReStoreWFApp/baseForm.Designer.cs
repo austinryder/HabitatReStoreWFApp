@@ -63,8 +63,8 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(98, 44);
-            this.closeToolStripMenuItem.Text = "&Close";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(74, 44);
+            this.closeToolStripMenuItem.Text = "&Exit";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // donationsToolStripMenuItem
@@ -86,7 +86,8 @@
             // 
             this.pickupScheduleToolStripMenuItem.Name = "pickupScheduleToolStripMenuItem";
             this.pickupScheduleToolStripMenuItem.Size = new System.Drawing.Size(346, 44);
-            this.pickupScheduleToolStripMenuItem.Text = "Pickup &Schedule";
+            this.pickupScheduleToolStripMenuItem.Text = "Add &Pickup";
+            this.pickupScheduleToolStripMenuItem.Click += new System.EventHandler(this.pickupScheduleToolStripMenuItem_Click);
             // 
             // volunteersToolStripMenuItem
             // 
