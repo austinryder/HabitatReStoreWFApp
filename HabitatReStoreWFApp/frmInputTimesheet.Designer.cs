@@ -36,8 +36,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.cboSupervisor = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pickTimeOut = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.pickTimeIn = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cboVolunteerCategory = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,14 +63,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboVolunteerCategory);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cboVolunteerID);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtLName);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtFName);
             this.groupBox1.Controls.Add(this.btnSubmit);
-            this.groupBox1.Controls.Add(this.cboSupervisor);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.pickTimeOut);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pickTimeIn);
@@ -133,32 +133,13 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(353, 294);
+            this.btnSubmit.Location = new System.Drawing.Point(353, 260);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 43);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "&Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // cboSupervisor
-            // 
-            this.cboSupervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSupervisor.FormattingEnabled = true;
-            this.cboSupervisor.Location = new System.Drawing.Point(298, 260);
-            this.cboSupervisor.Name = "cboSupervisor";
-            this.cboSupervisor.Size = new System.Drawing.Size(218, 28);
-            this.cboSupervisor.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(200, 265);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Supervisor: ";
             // 
             // pickTimeOut
             // 
@@ -254,6 +235,25 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cboVolunteerCategory
+            // 
+            this.cboVolunteerCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVolunteerCategory.FormattingEnabled = true;
+            this.cboVolunteerCategory.Location = new System.Drawing.Point(34, 145);
+            this.cboVolunteerCategory.Name = "cboVolunteerCategory";
+            this.cboVolunteerCategory.Size = new System.Drawing.Size(120, 28);
+            this.cboVolunteerCategory.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Volunteer Type: ";
+            // 
             // frmInputTimesheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,8 +286,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker pickTimeOut;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboSupervisor;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.Label label7;
@@ -296,5 +294,7 @@
         private System.Windows.Forms.ComboBox cboVolunteerID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cboVolunteerCategory;
+        private System.Windows.Forms.Label label6;
     }
 }
