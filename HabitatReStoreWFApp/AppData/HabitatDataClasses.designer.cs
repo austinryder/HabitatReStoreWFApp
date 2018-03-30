@@ -39,15 +39,15 @@ namespace HabitatReStoreWFApp.AppData
     partial void InsertDonor(Donor instance);
     partial void UpdateDonor(Donor instance);
     partial void DeleteDonor(Donor instance);
+    partial void InsertItem(Item instance);
+    partial void UpdateItem(Item instance);
+    partial void DeleteItem(Item instance);
     partial void InsertDriver(Driver instance);
     partial void UpdateDriver(Driver instance);
     partial void DeleteDriver(Driver instance);
     partial void InsertItem_Category(Item_Category instance);
     partial void UpdateItem_Category(Item_Category instance);
     partial void DeleteItem_Category(Item_Category instance);
-    partial void InsertItem(Item instance);
-    partial void UpdateItem(Item instance);
-    partial void DeleteItem(Item instance);
     partial void InsertManager_LogIn(Manager_LogIn instance);
     partial void UpdateManager_LogIn(Manager_LogIn instance);
     partial void DeleteManager_LogIn(Manager_LogIn instance);
@@ -137,6 +137,14 @@ namespace HabitatReStoreWFApp.AppData
 			}
 		}
 		
+		public System.Data.Linq.Table<Item> Items
+		{
+			get
+			{
+				return this.GetTable<Item>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Driver> Drivers
 		{
 			get
@@ -150,14 +158,6 @@ namespace HabitatReStoreWFApp.AppData
 			get
 			{
 				return this.GetTable<Item_Category>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Item> Items
-		{
-			get
-			{
-				return this.GetTable<Item>();
 			}
 		}
 		
@@ -225,19 +225,19 @@ namespace HabitatReStoreWFApp.AppData
 			}
 		}
 		
-		public System.Data.Linq.Table<Volunteer> Volunteers
-		{
-			get
-			{
-				return this.GetTable<Volunteer>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Volunteer_Category> Volunteer_Categories
 		{
 			get
 			{
 				return this.GetTable<Volunteer_Category>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Volunteer> Volunteers
+		{
+			get
+			{
+				return this.GetTable<Volunteer>();
 			}
 		}
 		
@@ -1369,6 +1369,246 @@ namespace HabitatReStoreWFApp.AppData
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Item")]
+	public partial class Item : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Item_ID;
+		
+		private int _Donation_ID;
+		
+		private int _Item_Category_ID;
+		
+		private System.Data.Linq.Binary _Donation_Image;
+		
+		private string _Description;
+		
+		private EntityRef<Donation> _Donation;
+		
+		private EntityRef<Item_Category> _Item_Category;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnItem_IDChanging(int value);
+    partial void OnItem_IDChanged();
+    partial void OnDonation_IDChanging(int value);
+    partial void OnDonation_IDChanged();
+    partial void OnItem_Category_IDChanging(int value);
+    partial void OnItem_Category_IDChanged();
+    partial void OnDonation_ImageChanging(System.Data.Linq.Binary value);
+    partial void OnDonation_ImageChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public Item()
+		{
+			this._Donation = default(EntityRef<Donation>);
+			this._Item_Category = default(EntityRef<Item_Category>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Item_ID
+		{
+			get
+			{
+				return this._Item_ID;
+			}
+			set
+			{
+				if ((this._Item_ID != value))
+				{
+					this.OnItem_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Item_ID = value;
+					this.SendPropertyChanged("Item_ID");
+					this.OnItem_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Donation_ID", DbType="Int NOT NULL")]
+		public int Donation_ID
+		{
+			get
+			{
+				return this._Donation_ID;
+			}
+			set
+			{
+				if ((this._Donation_ID != value))
+				{
+					if (this._Donation.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDonation_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Donation_ID = value;
+					this.SendPropertyChanged("Donation_ID");
+					this.OnDonation_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item_Category_ID", DbType="Int NOT NULL")]
+		public int Item_Category_ID
+		{
+			get
+			{
+				return this._Item_Category_ID;
+			}
+			set
+			{
+				if ((this._Item_Category_ID != value))
+				{
+					if (this._Item_Category.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnItem_Category_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Item_Category_ID = value;
+					this.SendPropertyChanged("Item_Category_ID");
+					this.OnItem_Category_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Donation_Image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Donation_Image
+		{
+			get
+			{
+				return this._Donation_Image;
+			}
+			set
+			{
+				if ((this._Donation_Image != value))
+				{
+					this.OnDonation_ImageChanging(value);
+					this.SendPropertyChanging();
+					this._Donation_Image = value;
+					this.SendPropertyChanged("Donation_Image");
+					this.OnDonation_ImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(255)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Donation_Item", Storage="_Donation", ThisKey="Donation_ID", OtherKey="Donation_ID", IsForeignKey=true)]
+		public Donation Donation
+		{
+			get
+			{
+				return this._Donation.Entity;
+			}
+			set
+			{
+				Donation previousValue = this._Donation.Entity;
+				if (((previousValue != value) 
+							|| (this._Donation.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Donation.Entity = null;
+						previousValue.Items.Remove(this);
+					}
+					this._Donation.Entity = value;
+					if ((value != null))
+					{
+						value.Items.Add(this);
+						this._Donation_ID = value.Donation_ID;
+					}
+					else
+					{
+						this._Donation_ID = default(int);
+					}
+					this.SendPropertyChanged("Donation");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Item_Category_Item", Storage="_Item_Category", ThisKey="Item_Category_ID", OtherKey="Item_Category_ID", IsForeignKey=true)]
+		public Item_Category Item_Category
+		{
+			get
+			{
+				return this._Item_Category.Entity;
+			}
+			set
+			{
+				Item_Category previousValue = this._Item_Category.Entity;
+				if (((previousValue != value) 
+							|| (this._Item_Category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Item_Category.Entity = null;
+						previousValue.Items.Remove(this);
+					}
+					this._Item_Category.Entity = value;
+					if ((value != null))
+					{
+						value.Items.Add(this);
+						this._Item_Category_ID = value.Item_Category_ID;
+					}
+					else
+					{
+						this._Item_Category_ID = default(int);
+					}
+					this.SendPropertyChanged("Item_Category");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Driver")]
 	public partial class Driver : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1898,222 +2138,6 @@ namespace HabitatReStoreWFApp.AppData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Item")]
-	public partial class Item : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Item_ID;
-		
-		private int _Donation_ID;
-		
-		private int _Item_Category_ID;
-		
-		private System.Data.Linq.Binary _Donation_Image;
-		
-		private EntityRef<Item_Category> _Item_Category;
-		
-		private EntityRef<Donation> _Donation;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnItem_IDChanging(int value);
-    partial void OnItem_IDChanged();
-    partial void OnDonation_IDChanging(int value);
-    partial void OnDonation_IDChanged();
-    partial void OnItem_Category_IDChanging(int value);
-    partial void OnItem_Category_IDChanged();
-    partial void OnDonation_ImageChanging(System.Data.Linq.Binary value);
-    partial void OnDonation_ImageChanged();
-    #endregion
-		
-		public Item()
-		{
-			this._Item_Category = default(EntityRef<Item_Category>);
-			this._Donation = default(EntityRef<Donation>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Item_ID
-		{
-			get
-			{
-				return this._Item_ID;
-			}
-			set
-			{
-				if ((this._Item_ID != value))
-				{
-					this.OnItem_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Item_ID = value;
-					this.SendPropertyChanged("Item_ID");
-					this.OnItem_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Donation_ID", DbType="Int NOT NULL")]
-		public int Donation_ID
-		{
-			get
-			{
-				return this._Donation_ID;
-			}
-			set
-			{
-				if ((this._Donation_ID != value))
-				{
-					if (this._Donation.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDonation_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Donation_ID = value;
-					this.SendPropertyChanged("Donation_ID");
-					this.OnDonation_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Item_Category_ID", DbType="Int NOT NULL")]
-		public int Item_Category_ID
-		{
-			get
-			{
-				return this._Item_Category_ID;
-			}
-			set
-			{
-				if ((this._Item_Category_ID != value))
-				{
-					if (this._Item_Category.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnItem_Category_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Item_Category_ID = value;
-					this.SendPropertyChanged("Item_Category_ID");
-					this.OnItem_Category_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Donation_Image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Donation_Image
-		{
-			get
-			{
-				return this._Donation_Image;
-			}
-			set
-			{
-				if ((this._Donation_Image != value))
-				{
-					this.OnDonation_ImageChanging(value);
-					this.SendPropertyChanging();
-					this._Donation_Image = value;
-					this.SendPropertyChanged("Donation_Image");
-					this.OnDonation_ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Item_Category_Item", Storage="_Item_Category", ThisKey="Item_Category_ID", OtherKey="Item_Category_ID", IsForeignKey=true)]
-		public Item_Category Item_Category
-		{
-			get
-			{
-				return this._Item_Category.Entity;
-			}
-			set
-			{
-				Item_Category previousValue = this._Item_Category.Entity;
-				if (((previousValue != value) 
-							|| (this._Item_Category.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Item_Category.Entity = null;
-						previousValue.Items.Remove(this);
-					}
-					this._Item_Category.Entity = value;
-					if ((value != null))
-					{
-						value.Items.Add(this);
-						this._Item_Category_ID = value.Item_Category_ID;
-					}
-					else
-					{
-						this._Item_Category_ID = default(int);
-					}
-					this.SendPropertyChanged("Item_Category");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Donation_Item", Storage="_Donation", ThisKey="Donation_ID", OtherKey="Donation_ID", IsForeignKey=true)]
-		public Donation Donation
-		{
-			get
-			{
-				return this._Donation.Entity;
-			}
-			set
-			{
-				Donation previousValue = this._Donation.Entity;
-				if (((previousValue != value) 
-							|| (this._Donation.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Donation.Entity = null;
-						previousValue.Items.Remove(this);
-					}
-					this._Donation.Entity = value;
-					if ((value != null))
-					{
-						value.Items.Add(this);
-						this._Donation_ID = value.Donation_ID;
-					}
-					else
-					{
-						this._Donation_ID = default(int);
-					}
-					this.SendPropertyChanged("Donation");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Manager_LogIn")]
 	public partial class Manager_LogIn : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2623,8 +2647,6 @@ namespace HabitatReStoreWFApp.AppData
 		
 		private string _Phone;
 		
-		private string _Email;
-		
 		private EntitySet<Donation> _Donations;
 		
 		private EntitySet<Vehicle> _Vehicles;
@@ -2653,8 +2675,6 @@ namespace HabitatReStoreWFApp.AppData
     partial void OnZipCodeChanged();
     partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
     #endregion
 		
 		public Store()
@@ -2822,26 +2842,6 @@ namespace HabitatReStoreWFApp.AppData
 					this._Phone = value;
 					this.SendPropertyChanged("Phone");
 					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(255)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
 				}
 			}
 		}
@@ -3653,6 +3653,51 @@ namespace HabitatReStoreWFApp.AppData
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Volunteer_Category")]
+	public partial class Volunteer_Category
+	{
+		
+		private int _Volunteer_ID;
+		
+		private int _Category_Type_ID;
+		
+		public Volunteer_Category()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Volunteer_ID", DbType="Int NOT NULL")]
+		public int Volunteer_ID
+		{
+			get
+			{
+				return this._Volunteer_ID;
+			}
+			set
+			{
+				if ((this._Volunteer_ID != value))
+				{
+					this._Volunteer_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category_Type_ID", DbType="Int NOT NULL")]
+		public int Category_Type_ID
+		{
+			get
+			{
+				return this._Category_Type_ID;
+			}
+			set
+			{
+				if ((this._Category_Type_ID != value))
+				{
+					this._Category_Type_ID = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Volunteer")]
 	public partial class Volunteer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4117,51 +4162,6 @@ namespace HabitatReStoreWFApp.AppData
 		{
 			this.SendPropertyChanging();
 			entity.Volunteer = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Volunteer_Category")]
-	public partial class Volunteer_Category
-	{
-		
-		private int _Volunteer_ID;
-		
-		private int _Category_Type_ID;
-		
-		public Volunteer_Category()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Volunteer_ID", DbType="Int NOT NULL")]
-		public int Volunteer_ID
-		{
-			get
-			{
-				return this._Volunteer_ID;
-			}
-			set
-			{
-				if ((this._Volunteer_ID != value))
-				{
-					this._Volunteer_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category_Type_ID", DbType="Int NOT NULL")]
-		public int Category_Type_ID
-		{
-			get
-			{
-				return this._Category_Type_ID;
-			}
-			set
-			{
-				if ((this._Category_Type_ID != value))
-				{
-					this._Category_Type_ID = value;
-				}
-			}
 		}
 	}
 	

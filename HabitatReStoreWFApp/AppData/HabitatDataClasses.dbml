@@ -49,6 +49,17 @@
       <Association Name="Status_Map_Donor" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_Category_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Donation_Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Donation_Item" Member="Donation" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Donation" IsForeignKey="true" />
+      <Association Name="Item_Category_Item" Member="Item_Category" ThisKey="Item_Category_ID" OtherKey="Item_Category_ID" Type="Item_Category" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Driver" Member="Drivers">
     <Type Name="Driver">
       <Column Name="Driver_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -74,16 +85,6 @@
       <Column Name="Item_Category_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Association Name="Item_Category_Item" Member="Items" ThisKey="Item_Category_ID" OtherKey="Item_Category_ID" Type="Item" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Item" Member="Items">
-    <Type Name="Item">
-      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Item_Category_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Donation_Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Item_Category_Item" Member="Item_Category" ThisKey="Item_Category_ID" OtherKey="Item_Category_ID" Type="Item_Category" IsForeignKey="true" />
-      <Association Name="Donation_Item" Member="Donation" ThisKey="Donation_ID" OtherKey="Donation_ID" Type="Donation" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Manager_LogIn" Member="Manager_LogIns">
@@ -122,7 +123,6 @@
       <Column Name="State" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
       <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Association Name="Store_Donation" Member="Donations" ThisKey="Store_ID" OtherKey="Store_ID" Type="Donation" />
       <Association Name="Store_Vehicle" Member="Vehicles" ThisKey="Store_ID" OtherKey="Store_ID" Type="Vehicle" />
       <Association Name="Store_Volunteer_Schedule" Member="Volunteer_Schedules" ThisKey="Store_ID" OtherKey="Store_ID" Type="Volunteer_Schedule" />
@@ -170,6 +170,14 @@
       <Association Name="Vehicle_Vehicle_Tracking" Member="Vehicle" ThisKey="Vehicle_ID" OtherKey="Vehicle_ID" Type="Vehicle" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Volunteer_Category" Member="Volunteer_Categories">
+    <Type Name="Volunteer_Category">
+      <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Volunteer_Volunteer_Category" Member="Volunteer" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer" IsForeignKey="true" />
+      <Association Name="Volunteer_Category_Type_Volunteer_Category" Member="Volunteer_Category_Type" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Category_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Volunteer" Member="Volunteers">
     <Type Name="Volunteer">
       <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -190,14 +198,6 @@
       <Association Name="Volunteer_Volunteer_Category" Member="Volunteer_Categories" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer_Category" />
       <Association Name="Volunteer_Volunteer_Schedule" Member="Volunteer_Schedules" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer_Schedule" />
       <Association Name="Status_Map_Volunteer" Member="Status_Map" ThisKey="Status_Map_ID" OtherKey="Status_Map_ID" Type="Status_Map" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Volunteer_Category" Member="Volunteer_Categories">
-    <Type Name="Volunteer_Category">
-      <Column Name="Volunteer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Category_Type_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Volunteer_Volunteer_Category" Member="Volunteer" ThisKey="Volunteer_ID" OtherKey="Volunteer_ID" Type="Volunteer" IsForeignKey="true" />
-      <Association Name="Volunteer_Category_Type_Volunteer_Category" Member="Volunteer_Category_Type" ThisKey="Category_Type_ID" OtherKey="Category_Type_ID" Type="Volunteer_Category_Type" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Volunteer_Category_Type" Member="Volunteer_Category_Types">
