@@ -19,5 +19,12 @@ namespace HabitatReStoreWFApp
         {
             Close();
         }
+
+        private void frmDonations_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'habitat_Restore_V2DataSet.Donation' table. You can move, or remove it, as needed.
+            this.donationTableAdapter.Fill(this.habitat_Restore_V2DataSet.Donation);
+
+        }
     }
 }
