@@ -61,5 +61,13 @@ namespace HabitatReStoreWFApp
             volunteerHours.ShowDialog();
             Show();
         }
+
+        private void viewAllDonationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDonations donations = new frmDonations();
+            Hide();
+            donations.ShowDialog();
+            Show();
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace HabitatReStoreWFApp
             this.reportsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(884, 33);
+            this.menuStrip.Size = new System.Drawing.Size(684, 33);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "mnuMain";
             // 
@@ -82,6 +82,7 @@ namespace HabitatReStoreWFApp
             this.viewAllDonationsToolStripMenuItem.Name = "viewAllDonationsToolStripMenuItem";
             this.viewAllDonationsToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
             this.viewAllDonationsToolStripMenuItem.Text = "View All &Donations";
+            this.viewAllDonationsToolStripMenuItem.Click += new System.EventHandler(this.viewAllDonationsToolStripMenuItem_Click);
             // 
             // pickupScheduleToolStripMenuItem
             // 
@@ -154,7 +155,7 @@ namespace HabitatReStoreWFApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.menuStrip);
             this.Name = "baseForm";
             this.Text = "Habitat for Humanity ReStore";
