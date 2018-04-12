@@ -124,6 +124,12 @@
     <Compile Include="frmVolunteerHours.Designer.cs">
       <DependentUpon>frmVolunteerHours.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVolunteers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVolunteers.Designer.cs">
+      <DependentUpon>frmVolunteers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Habitat_Restore_V2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVolunteerHours.resx">
       <DependentUpon>frmVolunteerHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVolunteers.resx">
+      <DependentUpon>frmVolunteers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

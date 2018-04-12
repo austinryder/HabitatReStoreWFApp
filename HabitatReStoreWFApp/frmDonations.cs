@@ -16,8 +16,10 @@ namespace HabitatReStoreWFApp
     {
         HabitatDataClassesDataContext db = new HabitatDataClassesDataContext();
         Donation selectedDonation = new Donation();
+        List<Item> selectedItems = new List<Item>();
         List<Donation> allDonations;
-        int index = 0;
+        int donationIndex = 0;
+        int itemsIndex = 0;
 
         public frmDonations()
         {
@@ -42,7 +44,7 @@ namespace HabitatReStoreWFApp
             txtAddress2.Enabled = false;
             txtDescription.Enabled = false;
             txtDonorID.Enabled = false;
-            txtStoreID.Enabled = false;
+            txtStore.Enabled = false;
             txtZipCode.Enabled = false;
             cboStatus.Enabled = false;
         }
@@ -54,7 +56,7 @@ namespace HabitatReStoreWFApp
             txtAddress2.Enabled = true;
             txtDescription.Enabled = true;
             txtDonorID.Enabled = true;
-            txtStoreID.Enabled = true;
+            txtStore.Enabled = true;
             txtZipCode.Enabled = true;
             cboStatus.Enabled = true;
         }
@@ -91,7 +93,8 @@ namespace HabitatReStoreWFApp
 
         private void GetAllDonations()
         {
-           index = 0;
+           donationIndex = 0;
+           itemsIndex = 0;
            int statusID = ((Status_Map)cboViewStatus.SelectedItem).Status_Entity_ID;
 
            var donations = from d in db.Donations
@@ -103,35 +106,53 @@ namespace HabitatReStoreWFApp
             //display index and count
             UpdateIndexAndCount();
 
-            DisplayDonation(index);
+            DisplayDonation(donationIndex);
+            DisplayItem(itemsIndex);
+
+            UpdateItemsIndexAndCount();
         }
 
         private void UpdateIndexAndCount()
         {
-            lblIndex.Text = (index + 1).ToString();
-            lblCount.Text = allDonations.Count().ToString();
+            lblIndex.Text = (donationIndex + 1).ToString();
+            lblCount.Text = allDonations.Count.ToString();
         }
 
-        private void DisplayDonation(int index)
+        private void UpdateItemsIndexAndCount()
         {
-            selectedDonation = allDonations[index];
-            Item selectedItem = new Item();
+            lblItemsIndex.Text = (itemsIndex + 1).ToString();
+            lblItemsCount.Text = selectedItems.Count().ToString();
+        }
 
-            var item = from i in db.Items
-                       where i.Donation_ID == selectedDonation.Donation_ID
-                       select i;
-            selectedItem = item.ToArray()[0];
+        private void DisplayDonation(int donationIndex)
+        {
+            selectedDonation = allDonations[donationIndex];
+
+            var items = from i in db.Items
+                        where i.Donation_ID == selectedDonation.Donation_ID
+                        select i;
+            selectedItems = items.ToList();
 
             txtDonationID.Text = selectedDonation.Donation_ID.ToString();
             txtDonorID.Text = selectedDonation.Donor_ID.ToString();
-            txtStoreID.Text = selectedDonation.Store_ID.ToString();
-            txtDescription.Text = selectedItem.Description;
+            txtStore.Text = selectedDonation.Store.Name.ToString();
             txtAddress.Text = selectedDonation.Address;
             txtAddress2.Text = selectedDonation.Address2;
             txtZipCode.Text = selectedDonation.ZipCode;
-            if (selectedItem.Donation_Image != null && selectedItem.Donation_Image.ToArray().Length > 0)
+            txtFName.Text = selectedDonation.Donor.First_Name;
+            txtLName.Text = selectedDonation.Donor.Last_Name;
+        }
+
+        private void DisplayItem(int itemsIndex)
+        {
+            Item thisItem = selectedItems[itemsIndex];
+
+            txtItemID.Text = thisItem.Item_ID.ToString();
+            txtItemCategory.Text = thisItem.Item_Category.Description.ToString();
+            txtDescription.Text = thisItem.Description;
+            if (thisItem.Donation_Image != null && thisItem.Donation_Image.ToArray().Length > 0)
             {
-                picImage.Image = ConvertToImage(selectedItem.Donation_Image.ToArray());
+                picImage.Image = ConvertToImage(thisItem.Donation_Image.ToArray());
             }
             else
             {
@@ -148,19 +169,23 @@ namespace HabitatReStoreWFApp
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (index > 0)
+            itemsIndex = 0;
+
+            if (donationIndex > 0)
             {
-                index--;
+                donationIndex--;
             }
 
-            DisplayDonation(index);
+            DisplayDonation(donationIndex);
+            DisplayItem(itemsIndex);
             UpdateIndexAndCount();
+            UpdateItemsIndexAndCount();
 
-            if (index == 0)
+            if (donationIndex == 0)
             {
                 btnPrevious.Enabled = false;
             }
-            if (index < (allDonations.Count() - 1))
+            if (donationIndex < (allDonations.Count() - 1))
             {
                 btnNext.Enabled = true;
             }
@@ -168,21 +193,70 @@ namespace HabitatReStoreWFApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (index < (allDonations.Count() - 1))
+            itemsIndex = 0;
+
+            if (donationIndex < (allDonations.Count() - 1))
             {
-                index++;
+                donationIndex++;
             }
 
-            DisplayDonation(index);
+            DisplayDonation(donationIndex);
+            DisplayItem(itemsIndex);
             UpdateIndexAndCount();
+            UpdateItemsIndexAndCount();
 
-            if (index == (allDonations.Count() - 1))
+            if (donationIndex == (allDonations.Count() - 1))
             {
                 btnNext.Enabled = false;
             }
-            if (index > 0)
+            if (donationIndex > 0)
             {
                 btnPrevious.Enabled = true;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnItemsPrevious_Click(object sender, EventArgs e)
+        {
+            if (itemsIndex > 0)
+            {
+                itemsIndex--;
+            }
+
+            DisplayItem(itemsIndex);
+            UpdateItemsIndexAndCount();
+
+            if (itemsIndex == 0)
+            {
+                btnItemsPrevious.Enabled = false;
+            }
+            if (itemsIndex < (selectedItems.Count() - 1))
+            {
+                btnItemsNext.Enabled = true;
+            }
+        }
+
+        private void btnItemsNext_Click(object sender, EventArgs e)
+        {
+            if (itemsIndex < (selectedItems.Count() - 1))
+            {
+                itemsIndex++;
+            }
+
+            DisplayItem(itemsIndex);
+            UpdateItemsIndexAndCount();
+
+            if (itemsIndex == (selectedItems.Count() - 1))
+            {
+                btnItemsNext.Enabled = false;
+            }
+            if (itemsIndex > 0)
+            {
+                btnItemsPrevious.Enabled = true;
             }
         }
     }

@@ -51,10 +51,10 @@ namespace HabitatReStoreWFApp
             this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeToolStripMenuItem,
             this.donationsToolStripMenuItem,
             this.volunteersToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(684, 33);
@@ -63,6 +63,7 @@ namespace HabitatReStoreWFApp
             // 
             // closeToolStripMenuItem
             // 
+            this.closeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
             this.closeToolStripMenuItem.Text = "&Close";
@@ -105,6 +106,7 @@ namespace HabitatReStoreWFApp
             this.viewAllVolunteersToolStripMenuItem.Name = "viewAllVolunteersToolStripMenuItem";
             this.viewAllVolunteersToolStripMenuItem.Size = new System.Drawing.Size(265, 30);
             this.viewAllVolunteersToolStripMenuItem.Text = "View All &Volunteers";
+            this.viewAllVolunteersToolStripMenuItem.Click += new System.EventHandler(this.viewAllVolunteersToolStripMenuItem_Click);
             // 
             // volunteerTimesheetsToolStripMenuItem
             // 

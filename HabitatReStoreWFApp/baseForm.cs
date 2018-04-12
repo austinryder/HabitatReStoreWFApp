@@ -17,10 +17,6 @@ namespace HabitatReStoreWFApp
             InitializeComponent();
         }
 
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void inputTimesheetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInputTimesheet inputTime = new frmInputTimesheet();
@@ -67,6 +63,14 @@ namespace HabitatReStoreWFApp
             frmDonations donations = new frmDonations();
             Hide();
             donations.ShowDialog();
+            Show();
+        }
+
+        private void viewAllVolunteersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVolunteers volunteers = new frmVolunteers();
+            Hide();
+            volunteers.ShowDialog();
             Show();
         }
     }
