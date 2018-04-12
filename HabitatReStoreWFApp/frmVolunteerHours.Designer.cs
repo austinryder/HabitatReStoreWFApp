@@ -42,45 +42,47 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime3 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime4 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime5 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime6 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime7 = new System.Windows.Forms.TextBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime8 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime9 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtTotalTime10 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.textBox38 = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtTotalTime11 = new System.Windows.Forms.TextBox();
+            this.txtTotalHours = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +194,7 @@
             this.txtTotalTime1.Name = "txtTotalTime1";
             this.txtTotalTime1.Size = new System.Drawing.Size(239, 35);
             this.txtTotalTime1.TabIndex = 22;
+            this.txtTotalTime1.TextChanged += new System.EventHandler(this.txtTotalTime1_TextChanged);
             // 
             // textBox1
             // 
@@ -217,13 +220,13 @@
             this.textBox3.Size = new System.Drawing.Size(239, 35);
             this.textBox3.TabIndex = 25;
             // 
-            // textBox4
+            // txtTotalTime2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(728, 472);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 35);
-            this.textBox4.TabIndex = 26;
+            this.txtTotalTime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime2.Location = new System.Drawing.Point(728, 472);
+            this.txtTotalTime2.Name = "txtTotalTime2";
+            this.txtTotalTime2.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime2.TabIndex = 26;
             // 
             // textBox5
             // 
@@ -249,13 +252,14 @@
             this.textBox7.Size = new System.Drawing.Size(239, 35);
             this.textBox7.TabIndex = 29;
             // 
-            // textBox8
+            // txtTotalTime3
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(728, 503);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(239, 35);
-            this.textBox8.TabIndex = 30;
+            this.txtTotalTime3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime3.Location = new System.Drawing.Point(728, 503);
+            this.txtTotalTime3.Name = "txtTotalTime3";
+            this.txtTotalTime3.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime3.TabIndex = 30;
+            this.txtTotalTime3.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // textBox9
             // 
@@ -281,13 +285,13 @@
             this.textBox11.Size = new System.Drawing.Size(239, 35);
             this.textBox11.TabIndex = 33;
             // 
-            // textBox12
+            // txtTotalTime4
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(728, 535);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(239, 35);
-            this.textBox12.TabIndex = 34;
+            this.txtTotalTime4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime4.Location = new System.Drawing.Point(728, 535);
+            this.txtTotalTime4.Name = "txtTotalTime4";
+            this.txtTotalTime4.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime4.TabIndex = 34;
             // 
             // textBox13
             // 
@@ -313,13 +317,14 @@
             this.textBox15.Size = new System.Drawing.Size(239, 35);
             this.textBox15.TabIndex = 37;
             // 
-            // textBox16
+            // txtTotalTime5
             // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(728, 566);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(239, 35);
-            this.textBox16.TabIndex = 38;
+            this.txtTotalTime5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime5.Location = new System.Drawing.Point(728, 566);
+            this.txtTotalTime5.Name = "txtTotalTime5";
+            this.txtTotalTime5.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime5.TabIndex = 38;
+            this.txtTotalTime5.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // textBox17
             // 
@@ -345,13 +350,13 @@
             this.textBox19.Size = new System.Drawing.Size(239, 35);
             this.textBox19.TabIndex = 41;
             // 
-            // textBox20
+            // txtTotalTime6
             // 
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(728, 598);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(239, 35);
-            this.textBox20.TabIndex = 42;
+            this.txtTotalTime6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime6.Location = new System.Drawing.Point(728, 598);
+            this.txtTotalTime6.Name = "txtTotalTime6";
+            this.txtTotalTime6.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime6.TabIndex = 42;
             // 
             // textBox21
             // 
@@ -377,13 +382,13 @@
             this.textBox23.Size = new System.Drawing.Size(239, 35);
             this.textBox23.TabIndex = 45;
             // 
-            // textBox24
+            // txtTotalTime7
             // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(728, 630);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(239, 35);
-            this.textBox24.TabIndex = 46;
+            this.txtTotalTime7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime7.Location = new System.Drawing.Point(728, 630);
+            this.txtTotalTime7.Name = "txtTotalTime7";
+            this.txtTotalTime7.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime7.TabIndex = 46;
             // 
             // textBox25
             // 
@@ -409,13 +414,13 @@
             this.textBox27.Size = new System.Drawing.Size(239, 35);
             this.textBox27.TabIndex = 49;
             // 
-            // textBox28
+            // txtTotalTime8
             // 
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(728, 662);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(239, 35);
-            this.textBox28.TabIndex = 50;
+            this.txtTotalTime8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime8.Location = new System.Drawing.Point(728, 662);
+            this.txtTotalTime8.Name = "txtTotalTime8";
+            this.txtTotalTime8.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime8.TabIndex = 50;
             // 
             // textBox29
             // 
@@ -441,13 +446,13 @@
             this.textBox31.Size = new System.Drawing.Size(239, 35);
             this.textBox31.TabIndex = 53;
             // 
-            // textBox32
+            // txtTotalTime9
             // 
-            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.Location = new System.Drawing.Point(728, 694);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(239, 35);
-            this.textBox32.TabIndex = 54;
+            this.txtTotalTime9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime9.Location = new System.Drawing.Point(728, 694);
+            this.txtTotalTime9.Name = "txtTotalTime9";
+            this.txtTotalTime9.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime9.TabIndex = 54;
             // 
             // textBox33
             // 
@@ -473,13 +478,13 @@
             this.textBox35.Size = new System.Drawing.Size(239, 35);
             this.textBox35.TabIndex = 57;
             // 
-            // textBox36
+            // txtTotalTime10
             // 
-            this.textBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox36.Location = new System.Drawing.Point(728, 724);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(239, 35);
-            this.textBox36.TabIndex = 58;
+            this.txtTotalTime10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime10.Location = new System.Drawing.Point(728, 724);
+            this.txtTotalTime10.Name = "txtTotalTime10";
+            this.txtTotalTime10.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime10.TabIndex = 58;
             // 
             // textBox37
             // 
@@ -505,31 +510,50 @@
             this.textBox39.Size = new System.Drawing.Size(239, 35);
             this.textBox39.TabIndex = 61;
             // 
-            // textBox40
+            // txtTotalTime11
             // 
-            this.textBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox40.Location = new System.Drawing.Point(728, 755);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(239, 35);
-            this.textBox40.TabIndex = 62;
+            this.txtTotalTime11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTime11.Location = new System.Drawing.Point(728, 755);
+            this.txtTotalTime11.Name = "txtTotalTime11";
+            this.txtTotalTime11.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalTime11.TabIndex = 62;
             // 
-            // textBox41
+            // txtTotalHours
             // 
-            this.textBox41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox41.Location = new System.Drawing.Point(728, 796);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(239, 35);
-            this.textBox41.TabIndex = 63;
+            this.txtTotalHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalHours.Location = new System.Drawing.Point(728, 796);
+            this.txtTotalHours.Name = "txtTotalHours";
+            this.txtTotalHours.Size = new System.Drawing.Size(239, 35);
+            this.txtTotalHours.TabIndex = 63;
+            this.txtTotalHours.TextChanged += new System.EventHandler(this.txtTotalHours_TextChanged);
             // 
-            // label6
+            // lblName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(573, 796);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 29);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Total Hours";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(19, 327);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(89, 29);
+            this.lblName.TabIndex = 65;
+            this.lblName.Text = "Name:";
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(114, 331);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(484, 26);
+            this.textBox42.TabIndex = 66;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(532, 796);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 35);
+            this.button1.TabIndex = 67;
+            this.button1.Text = "Total Hours";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmVolunteerHours
             // 
@@ -537,45 +561,47 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1026, 867);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox41);
-            this.Controls.Add(this.textBox40);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox42);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtTotalHours);
+            this.Controls.Add(this.txtTotalTime11);
             this.Controls.Add(this.textBox39);
             this.Controls.Add(this.textBox38);
             this.Controls.Add(this.textBox37);
-            this.Controls.Add(this.textBox36);
+            this.Controls.Add(this.txtTotalTime10);
             this.Controls.Add(this.textBox35);
             this.Controls.Add(this.textBox34);
             this.Controls.Add(this.textBox33);
-            this.Controls.Add(this.textBox32);
+            this.Controls.Add(this.txtTotalTime9);
             this.Controls.Add(this.textBox31);
             this.Controls.Add(this.textBox30);
             this.Controls.Add(this.textBox29);
-            this.Controls.Add(this.textBox28);
+            this.Controls.Add(this.txtTotalTime8);
             this.Controls.Add(this.textBox27);
             this.Controls.Add(this.textBox26);
             this.Controls.Add(this.textBox25);
-            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.txtTotalTime7);
             this.Controls.Add(this.textBox23);
             this.Controls.Add(this.textBox22);
             this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.txtTotalTime6);
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.textBox18);
             this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
+            this.Controls.Add(this.txtTotalTime5);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.txtTotalTime4);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtTotalTime3);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtTotalTime2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -606,45 +632,47 @@
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.textBox2, 0);
             this.Controls.SetChildIndex(this.textBox3, 0);
-            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime2, 0);
             this.Controls.SetChildIndex(this.textBox5, 0);
             this.Controls.SetChildIndex(this.textBox6, 0);
             this.Controls.SetChildIndex(this.textBox7, 0);
-            this.Controls.SetChildIndex(this.textBox8, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime3, 0);
             this.Controls.SetChildIndex(this.textBox9, 0);
             this.Controls.SetChildIndex(this.textBox10, 0);
             this.Controls.SetChildIndex(this.textBox11, 0);
-            this.Controls.SetChildIndex(this.textBox12, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime4, 0);
             this.Controls.SetChildIndex(this.textBox13, 0);
             this.Controls.SetChildIndex(this.textBox14, 0);
             this.Controls.SetChildIndex(this.textBox15, 0);
-            this.Controls.SetChildIndex(this.textBox16, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime5, 0);
             this.Controls.SetChildIndex(this.textBox17, 0);
             this.Controls.SetChildIndex(this.textBox18, 0);
             this.Controls.SetChildIndex(this.textBox19, 0);
-            this.Controls.SetChildIndex(this.textBox20, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime6, 0);
             this.Controls.SetChildIndex(this.textBox21, 0);
             this.Controls.SetChildIndex(this.textBox22, 0);
             this.Controls.SetChildIndex(this.textBox23, 0);
-            this.Controls.SetChildIndex(this.textBox24, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime7, 0);
             this.Controls.SetChildIndex(this.textBox25, 0);
             this.Controls.SetChildIndex(this.textBox26, 0);
             this.Controls.SetChildIndex(this.textBox27, 0);
-            this.Controls.SetChildIndex(this.textBox28, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime8, 0);
             this.Controls.SetChildIndex(this.textBox29, 0);
             this.Controls.SetChildIndex(this.textBox30, 0);
             this.Controls.SetChildIndex(this.textBox31, 0);
-            this.Controls.SetChildIndex(this.textBox32, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime9, 0);
             this.Controls.SetChildIndex(this.textBox33, 0);
             this.Controls.SetChildIndex(this.textBox34, 0);
             this.Controls.SetChildIndex(this.textBox35, 0);
-            this.Controls.SetChildIndex(this.textBox36, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime10, 0);
             this.Controls.SetChildIndex(this.textBox37, 0);
             this.Controls.SetChildIndex(this.textBox38, 0);
             this.Controls.SetChildIndex(this.textBox39, 0);
-            this.Controls.SetChildIndex(this.textBox40, 0);
-            this.Controls.SetChildIndex(this.textBox41, 0);
-            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.txtTotalTime11, 0);
+            this.Controls.SetChildIndex(this.txtTotalHours, 0);
+            this.Controls.SetChildIndex(this.lblName, 0);
+            this.Controls.SetChildIndex(this.textBox42, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -667,44 +695,46 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTotalTime2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtTotalTime3;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtTotalTime4;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtTotalTime5;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtTotalTime6;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox txtTotalTime7;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtTotalTime8;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox txtTotalTime9;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtTotalTime10;
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTotalTime11;
+        private System.Windows.Forms.TextBox txtTotalHours;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.Button button1;
     }
 }
