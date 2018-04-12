@@ -68,7 +68,7 @@ namespace HabitatReStoreWFApp
                                     dps.PickUp_Window_Start.Date == pickDate.Value.Date &&
                                     dps.Donation.Store.Store_ID == selectedStore.Store_ID
                                     orderby dps.PickUp_Window_Start descending
-                                    select dps).Take(numPickups).Reverse();
+                                    select dps).Take(numPickups);
 
             schedules = donationSchedules.ToList();
 
