@@ -72,6 +72,7 @@ namespace HabitatReStoreWFApp
 
             schedules = donationSchedules.ToList();
 
+            lstPickups.Items.Clear();
             foreach (Donation_PickUp_Schedule sched in schedules)
             {
                 ListViewItem item = new ListViewItem(new string[] {

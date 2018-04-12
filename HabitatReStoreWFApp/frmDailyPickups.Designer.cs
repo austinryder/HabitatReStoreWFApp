@@ -93,33 +93,40 @@
             this.specialInstructions});
             this.lstPickups.Location = new System.Drawing.Point(12, 165);
             this.lstPickups.Name = "lstPickups";
-            this.lstPickups.Size = new System.Drawing.Size(659, 307);
+            this.lstPickups.Size = new System.Drawing.Size(919, 307);
             this.lstPickups.TabIndex = 34;
             this.lstPickups.UseCompatibleStateImageBehavior = false;
+            this.lstPickups.View = System.Windows.Forms.View.Details;
             // 
             // donationID
             // 
             this.donationID.Text = "Donation ID";
+            this.donationID.Width = 70;
             // 
             // store
             // 
             this.store.Text = "Store";
+            this.store.Width = 110;
             // 
             // address
             // 
             this.address.Text = "Address";
+            this.address.Width = 100;
             // 
             // address2
             // 
             this.address2.Text = "Address 2";
+            this.address2.Width = 100;
             // 
             // city
             // 
             this.city.Text = "City";
+            this.city.Width = 80;
             // 
             // state
             // 
             this.state.Text = "State";
+            this.state.Width = 50;
             // 
             // zipcode
             // 
@@ -128,23 +135,27 @@
             // pickupDate
             // 
             this.pickupDate.Text = "Date";
+            this.pickupDate.Width = 80;
             // 
             // pickupStart
             // 
             this.pickupStart.Text = "Window Start";
+            this.pickupStart.Width = 80;
             // 
             // pickupEnd
             // 
             this.pickupEnd.Text = "Window End";
+            this.pickupEnd.Width = 80;
             // 
             // specialInstructions
             // 
             this.specialInstructions.Text = "Special Instructions";
+            this.specialInstructions.Width = 110;
             // 
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(596, 478);
+            this.btnPrint.Location = new System.Drawing.Point(685, 478);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 53);
             this.btnPrint.TabIndex = 35;
@@ -157,7 +168,7 @@
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Location = new System.Drawing.Point(77, 92);
             this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(146, 28);
+            this.cboStore.Size = new System.Drawing.Size(241, 28);
             this.cboStore.TabIndex = 37;
             // 
             // label2
@@ -174,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(245, 92);
+            this.label3.Location = new System.Drawing.Point(340, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 38;
@@ -185,7 +196,7 @@
             this.pickDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickDate.Location = new System.Drawing.Point(304, 92);
+            this.pickDate.Location = new System.Drawing.Point(399, 92);
             this.pickDate.Name = "pickDate";
             this.pickDate.Size = new System.Drawing.Size(150, 26);
             this.pickDate.TabIndex = 39;
@@ -219,7 +230,7 @@
             // 
             this.cboDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDriver.FormattingEnabled = true;
-            this.cboDriver.Location = new System.Drawing.Point(304, 132);
+            this.cboDriver.Location = new System.Drawing.Point(399, 132);
             this.cboDriver.Name = "cboDriver";
             this.cboDriver.Size = new System.Drawing.Size(150, 28);
             this.cboDriver.TabIndex = 44;
@@ -229,7 +240,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(234, 132);
+            this.label5.Location = new System.Drawing.Point(329, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 24);
             this.label5.TabIndex = 43;
@@ -238,7 +249,7 @@
             // btnGenerateSchedule
             // 
             this.btnGenerateSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateSchedule.Location = new System.Drawing.Point(473, 92);
+            this.btnGenerateSchedule.Location = new System.Drawing.Point(596, 92);
             this.btnGenerateSchedule.Name = "btnGenerateSchedule";
             this.btnGenerateSchedule.Size = new System.Drawing.Size(103, 64);
             this.btnGenerateSchedule.TabIndex = 45;
@@ -248,7 +259,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(597, 36);
+            this.btnBack.Location = new System.Drawing.Point(857, 36);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 46;
@@ -259,7 +270,7 @@
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(507, 478);
+            this.btnAccept.Location = new System.Drawing.Point(596, 478);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(83, 53);
             this.btnAccept.TabIndex = 47;
@@ -271,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(684, 543);
+            this.ClientSize = new System.Drawing.Size(943, 543);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnGenerateSchedule);
