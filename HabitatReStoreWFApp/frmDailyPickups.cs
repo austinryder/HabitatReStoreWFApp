@@ -54,7 +54,7 @@ namespace HabitatReStoreWFApp
         {
             string lastname = ((Driver)e.ListItem).Last_Name;
             string firstname = ((Driver)e.ListItem).First_Name;
-            e.Value = lastname + " " + firstname;
+            e.Value = lastname + ", " + firstname;
         }
 
         private void btnGenerateSchedule_Click(object sender, EventArgs e)
@@ -73,6 +73,7 @@ namespace HabitatReStoreWFApp
             schedules = donationSchedules.ToList();
 
             lstPickups.Items.Clear();
+
             foreach (Donation_PickUp_Schedule sched in schedules)
             {
                 ListViewItem item = new ListViewItem(new string[] {

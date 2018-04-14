@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboStore = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.cboVolunteerCategory = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cboVolunteerID = new System.Windows.Forms.ComboBox();
@@ -45,8 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboStore = new System.Windows.Forms.ComboBox();
+            this.pickDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +65,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pickDate);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboStore);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cboVolunteerCategory);
@@ -83,6 +87,25 @@
             this.groupBox1.Size = new System.Drawing.Size(660, 359);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // cboStore
+            // 
+            this.cboStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStore.FormattingEnabled = true;
+            this.cboStore.Location = new System.Drawing.Point(298, 260);
+            this.cboStore.Name = "cboStore";
+            this.cboStore.Size = new System.Drawing.Size(218, 28);
+            this.cboStore.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(236, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Store: ";
             // 
             // cboVolunteerCategory
             // 
@@ -126,7 +149,7 @@
             // txtLName
             // 
             this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLName.Location = new System.Drawing.Point(298, 80);
+            this.txtLName.Location = new System.Drawing.Point(298, 76);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(218, 26);
             this.txtLName.TabIndex = 4;
@@ -135,7 +158,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(198, 83);
+            this.label7.Location = new System.Drawing.Point(198, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 12;
@@ -152,7 +175,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(353, 288);
+            this.btnSubmit.Location = new System.Drawing.Point(353, 294);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 43);
             this.btnSubmit.TabIndex = 10;
@@ -165,7 +188,7 @@
             this.pickTimeOut.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeOut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.pickTimeOut.Location = new System.Drawing.Point(298, 180);
+            this.pickTimeOut.Location = new System.Drawing.Point(298, 214);
             this.pickTimeOut.Name = "pickTimeOut";
             this.pickTimeOut.ShowUpDown = true;
             this.pickTimeOut.Size = new System.Drawing.Size(218, 26);
@@ -176,7 +199,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(211, 185);
+            this.label5.Location = new System.Drawing.Point(211, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 6;
@@ -187,7 +210,7 @@
             this.pickTimeIn.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeIn.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.pickTimeIn.Location = new System.Drawing.Point(298, 130);
+            this.pickTimeIn.Location = new System.Drawing.Point(298, 168);
             this.pickTimeIn.Name = "pickTimeIn";
             this.pickTimeIn.ShowUpDown = true;
             this.pickTimeIn.Size = new System.Drawing.Size(218, 26);
@@ -199,7 +222,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(223, 133);
+            this.label4.Location = new System.Drawing.Point(223, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 4;
@@ -209,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(198, 33);
+            this.label2.Location = new System.Drawing.Point(198, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 0;
@@ -234,24 +257,26 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label9
+            // pickDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(236, 233);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Store: ";
+            this.pickDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pickDate.Location = new System.Drawing.Point(298, 122);
+            this.pickDate.Name = "pickDate";
+            this.pickDate.Size = new System.Drawing.Size(218, 26);
+            this.pickDate.TabIndex = 20;
+            this.pickDate.Value = new System.DateTime(2018, 2, 25, 12, 0, 0, 0);
             // 
-            // cboStore
+            // label3
             // 
-            this.cboStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStore.FormattingEnabled = true;
-            this.cboStore.Location = new System.Drawing.Point(298, 230);
-            this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(218, 28);
-            this.cboStore.TabIndex = 18;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(240, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Date: ";
             // 
             // frmInputTimesheet
             // 
@@ -262,6 +287,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmInputTimesheet";
+            this.Load += new System.EventHandler(this.frmInputTimesheet_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
@@ -295,5 +321,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboStore;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker pickDate;
+        private System.Windows.Forms.Label label3;
     }
 }
