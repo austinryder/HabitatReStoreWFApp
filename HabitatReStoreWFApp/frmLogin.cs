@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HabitatReStoreWFApp.AppData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace HabitatReStoreWFApp
 {
     public partial class frmLogin : Form
     {
+        HabitatDataClassesDataContext db = new HabitatDataClassesDataContext();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -24,12 +27,38 @@ namespace HabitatReStoreWFApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool authorized = true;
+            bool authorized = false;
 
-            if (authorized) {
-                frmMain main = new frmMain();
-                this.Hide();
-                main.Show();
+            string user = txtUser.Text;
+            string password = txtPassword.Text;
+
+            var manager = from ml in db.Manager_LogIns
+                          where ml.UserName == user && ml.Password == password
+                          select ml;
+
+            try
+            {
+                if (manager.Count() == 0)
+                {
+                    authorized = false;
+                    MessageBox.Show("Incorrect Username and Password");
+                }
+                else
+                {
+                    authorized = true;
+                }
+
+                if (authorized)
+                {
+                    frmMain main = new frmMain();
+                    this.Hide();
+                    main.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error connecting to database");
+                Console.WriteLine(ex);
             }
         }
 

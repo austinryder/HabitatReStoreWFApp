@@ -64,7 +64,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.4375in</Height>
+              <Height>0.625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -122,7 +122,7 @@
         <DataSetName>Store</DataSetName>
         <Top>1.96182in</Top>
         <Left>4.02431in</Left>
-        <Height>0.91667in</Height>
+        <Height>1.10417in</Height>
         <Width>1.41666in</Width>
         <Style>
           <Border>
@@ -344,7 +344,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.4375in</Height>
+              <Height>0.625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -542,7 +542,7 @@
         <DataSetName>Donations</DataSetName>
         <Top>1.96182in</Top>
         <Left>5.44097in</Left>
-        <Height>0.91667in</Height>
+        <Height>1.10417in</Height>
         <Width>3.73611in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -714,7 +714,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.4375in</Height>
+              <Height>0.625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -765,6 +765,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Format>hh:mm:ss tt</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -799,6 +800,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Format>hh:mm:ss tt</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -879,8 +881,8 @@
         <DataSetName>PickupSchedules</DataSetName>
         <Top>1.96182in</Top>
         <Left>0.06125in</Left>
-        <Height>0.91667in</Height>
-        <Width>3.96306in</Width>
+        <Height>1.10417in</Height>
+        <Width>3.96305in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
