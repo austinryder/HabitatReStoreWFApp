@@ -264,6 +264,20 @@ namespace HabitatReStoreWFApp.AppData
 				return this.GetTable<ZipCode_Range>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_UpdateDonation")]
+		public int usp_UpdateDonation([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Donation_ID", DbType="Int")] System.Nullable<int> donation_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Store_ID", DbType="Int")] System.Nullable<int> store_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status_Map_ID", DbType="Int")] System.Nullable<int> status_Map_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(255)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="VarChar(255)")] string address2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="VarChar(45)")] string city, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="State", DbType="Char(2)")] string state, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ZipCode", DbType="VarChar(10)")] string zipCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bypass_Flag", DbType="Bit")] System.Nullable<bool> bypass_Flag)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), donation_ID, store_ID, status_Map_ID, address, address2, city, state, zipCode, bypass_Flag);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_AddVolunteer_Schedule")]
+		public int usp_AddVolunteer_Schedule([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Store_ID", DbType="Int")] System.Nullable<int> store_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Volunteer_ID", DbType="Int")] System.Nullable<int> volunteer_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category_Type_ID", DbType="Int")] System.Nullable<int> category_Type_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sign_In", DbType="DateTime")] System.Nullable<System.DateTime> sign_In, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sign_Out", DbType="DateTime")] System.Nullable<System.DateTime> sign_Out)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), store_ID, volunteer_ID, category_Type_ID, sign_In, sign_Out);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Donation")]

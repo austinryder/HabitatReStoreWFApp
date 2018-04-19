@@ -120,11 +120,15 @@ namespace HabitatReStoreWFApp
                     Sign_Out = pickTimeOut.Value
                 };
 
-                db.Volunteer_Schedules.InsertOnSubmit(newSchedule);
-
                 try
                 {
-                    db.SubmitChanges();
+                    db.usp_AddVolunteer_Schedule(
+                        store_ID: newSchedule.Store_ID,
+                        volunteer_ID: newSchedule.Volunteer_ID,
+                        category_Type_ID: newSchedule.Category_Type_ID,
+                        sign_In: newSchedule.Sign_In,
+                        sign_Out: newSchedule.Sign_Out
+                        );
                     MessageBox.Show("Timesheet submitted successfully.");
                 }
                 catch (Exception ex)

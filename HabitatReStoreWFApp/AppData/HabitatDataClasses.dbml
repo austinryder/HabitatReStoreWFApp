@@ -229,4 +229,24 @@
       <Association Name="Store_ZipCode_Range" Member="Store" ThisKey="Store_ID" OtherKey="Store_ID" Type="Store" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.usp_UpdateDonation" Method="usp_UpdateDonation">
+    <Parameter Name="Donation_ID" Parameter="donation_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Store_ID" Parameter="store_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status_Map_ID" Parameter="status_Map_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(45)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="ZipCode" Parameter="zipCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Bypass_Flag" Parameter="bypass_Flag" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AddVolunteer_Schedule" Method="usp_AddVolunteer_Schedule">
+    <Parameter Name="Store_ID" Parameter="store_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Volunteer_ID" Parameter="volunteer_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Category_Type_ID" Parameter="category_Type_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sign_In" Parameter="sign_In" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Sign_Out" Parameter="sign_Out" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
