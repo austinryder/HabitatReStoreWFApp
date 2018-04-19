@@ -92,11 +92,17 @@ namespace HabitatReStoreWFApp
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            DateTime timeIn = new DateTime();
+            DateTime timeOut = new DateTime();
+
+            timeIn = pickDate.Value.Date + pickTimeIn.Value.TimeOfDay;
+            timeOut = pickDate.Value.Date + pickTimeOut.Value.TimeOfDay;
+
             if (cboVolunteerCategory.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select a volunteer category.");
             }
-            else if (pickTimeIn.Value >= pickTimeOut.Value)
+            else if (timeIn.TimeOfDay >= timeOut.TimeOfDay)
             {
                 MessageBox.Show("Time out must be after time in.");
             }
@@ -114,11 +120,15 @@ namespace HabitatReStoreWFApp
                     Sign_Out = pickTimeOut.Value
                 };
 
-                db.Volunteer_Schedules.InsertOnSubmit(newSchedule);
-
                 try
                 {
-                    db.SubmitChanges();
+                    db.usp_AddVolunteer_Schedule(
+                        store_ID: newSchedule.Store_ID,
+                        volunteer_ID: newSchedule.Volunteer_ID,
+                        category_Type_ID: newSchedule.Category_Type_ID,
+                        sign_In: newSchedule.Sign_In,
+                        sign_Out: newSchedule.Sign_Out
+                        );
                     MessageBox.Show("Timesheet submitted successfully.");
                 }
                 catch (Exception ex)
@@ -127,6 +137,11 @@ namespace HabitatReStoreWFApp
                     Console.WriteLine(ex);
                 }
             }
+        }
+
+        private void frmInputTimesheet_Load(object sender, EventArgs e)
+        {
+            pickDate.Value = DateTime.Today.Date;
         }
 
         private void cboStore_SelectedIndexChanged(object sender, EventArgs e)
