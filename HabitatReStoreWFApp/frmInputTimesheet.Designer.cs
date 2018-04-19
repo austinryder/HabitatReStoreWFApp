@@ -86,6 +86,7 @@
             this.groupBox1.Size = new System.Drawing.Size(990, 552);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cboStore
             // 
@@ -205,7 +206,7 @@
             this.pickTimeOut.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeOut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.pickTimeOut.Location = new System.Drawing.Point(447, 277);
+            this.pickTimeOut.Location = new System.Drawing.Point(447, 298);
             this.pickTimeOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pickTimeOut.Name = "pickTimeOut";
             this.pickTimeOut.ShowUpDown = true;
@@ -217,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(316, 285);
+            this.label5.Location = new System.Drawing.Point(316, 306);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 29);
@@ -229,7 +230,7 @@
             this.pickTimeIn.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickTimeIn.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.pickTimeIn.Location = new System.Drawing.Point(447, 200);
+            this.pickTimeIn.Location = new System.Drawing.Point(447, 236);
             this.pickTimeIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pickTimeIn.Name = "pickTimeIn";
             this.pickTimeIn.ShowUpDown = true;
@@ -242,7 +243,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(334, 205);
+            this.label4.Location = new System.Drawing.Point(334, 241);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 29);

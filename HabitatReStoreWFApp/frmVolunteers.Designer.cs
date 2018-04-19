@@ -63,8 +63,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.chkEnableEdits = new System.Windows.Forms.CheckBox();
-            this.btnNewVolunteer = new System.Windows.Forms.Button();
-            this.btnCancelVol = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -470,34 +468,10 @@
             this.chkEnableEdits.Text = "Make Edits?";
             this.chkEnableEdits.UseVisualStyleBackColor = true;
             // 
-            // btnNewVolunteer
-            // 
-            this.btnNewVolunteer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewVolunteer.Location = new System.Drawing.Point(733, 75);
-            this.btnNewVolunteer.Name = "btnNewVolunteer";
-            this.btnNewVolunteer.Size = new System.Drawing.Size(273, 43);
-            this.btnNewVolunteer.TabIndex = 61;
-            this.btnNewVolunteer.Text = "New Volunteer";
-            this.btnNewVolunteer.UseVisualStyleBackColor = true;
-            this.btnNewVolunteer.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCancelVol
-            // 
-            this.btnCancelVol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelVol.Location = new System.Drawing.Point(733, 134);
-            this.btnCancelVol.Name = "btnCancelVol";
-            this.btnCancelVol.Size = new System.Drawing.Size(273, 44);
-            this.btnCancelVol.TabIndex = 62;
-            this.btnCancelVol.Text = "Delete Volunteer";
-            this.btnCancelVol.UseVisualStyleBackColor = true;
-            this.btnCancelVol.Click += new System.EventHandler(this.btnCancelVol_Click);
-            // 
             // frmVolunteers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.ClientSize = new System.Drawing.Size(1026, 835);
-            this.Controls.Add(this.btnCancelVol);
-            this.Controls.Add(this.btnNewVolunteer);
             this.Controls.Add(this.chkEnableEdits);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -509,8 +483,6 @@
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.chkEnableEdits, 0);
-            this.Controls.SetChildIndex(this.btnNewVolunteer, 0);
-            this.Controls.SetChildIndex(this.btnCancelVol, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -555,7 +527,5 @@
         private System.Windows.Forms.Label lblIndex;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNewVolunteer;
-        private System.Windows.Forms.Button btnCancelVol;
     }
 }
