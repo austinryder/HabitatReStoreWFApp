@@ -16,10 +16,12 @@ namespace HabitatReStoreWFApp
         Volunteer selectedVolunteer = new Volunteer();
         List<Volunteer> allVolunteers;
         int volunteerIndex = 0;
+        
 
         public frmVolunteers()
         {
             InitializeComponent();
+            
         }
 
         private void frmVolunteers_Load(object sender, EventArgs e)
@@ -112,6 +114,72 @@ namespace HabitatReStoreWFApp
             if (volunteerIndex > 0)
             {
                 btnPrevious.Enabled = true;
+            }
+        }
+
+        private void txtVolunteerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFName.Text))
+            {
+                MessageBox.Show("You must enter a first name.");
+            }
+            else if (string.IsNullOrEmpty(txtMName.Text))
+            {
+                MessageBox.Show("You must enter a middle name.");
+            }
+            else if (string.IsNullOrEmpty(txtLName.Text))
+            {
+                MessageBox.Show("You must enter a last name.");
+            }
+            else if (string.IsNullOrEmpty(txtDOB.Text))
+            {
+                MessageBox.Show("You must enter a date of birth.");
+            }
+            else if (string.IsNullOrEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("You must enter an address.");
+            }
+            else if(string.IsNullOrEmpty(txtCity.Text))
+            {
+                MessageBox.Show("You must enter a city.");
+            }
+            else if (string.IsNullOrEmpty(txtState.Text))
+            {
+                MessageBox.Show("You must enter a state.");
+            }
+            else if (string.IsNullOrEmpty(txtZipCode.Text))
+            {
+                MessageBox.Show("You must enter a zip code.");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelVol_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult result = (MessageBox.Show("Do you really want to delete the volunteer?", "Delete Volunteer", MessageBoxButtons.YesNo));
+            if (result == DialogResult.Yes)
+            {
+                txtFName.Text = "";
+                txtMName.Text = "";
+                txtLName.Text = "";
+                txtGender.Text = "";
+                txtDOB.Text = "";
+                txtAddress.Text = "";
+                txtAddress2.Text = "";
+                txtCity.Text = "";
+                txtState.Text = "";
+                txtZipCode.Text = "";
+
             }
         }
     }

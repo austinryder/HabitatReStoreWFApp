@@ -73,5 +73,22 @@ namespace HabitatReStoreWFApp
             volunteers.ShowDialog();
             Show();
         }
+
+        private void volunteerTimesheetsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVolunteerHours volunteerHours = new frmVolunteerHours();
+            Hide();
+            volunteerHours.ShowDialog();
+            Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

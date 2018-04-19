@@ -128,5 +128,10 @@ namespace HabitatReStoreWFApp
                 }
             }
         }
+
+        private void cboStore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

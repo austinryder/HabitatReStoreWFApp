@@ -72,5 +72,18 @@ namespace HabitatReStoreWFApp
         {
 
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmVolunteers volunteers = new frmVolunteers();
+            Hide();
+            volunteers.ShowDialog();
+            Show();
+        }
     }
 }

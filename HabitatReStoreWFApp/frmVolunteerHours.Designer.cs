@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lsbxStore = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,31 +80,25 @@
             this.txtTotalTime11 = new System.Windows.Forms.TextBox();
             this.txtTotalHours = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.Image = global::HabitatReStoreWFApp.Properties.Resources.habitat_for_humanity_restore_logo2;
-            this.imgLogo.Location = new System.Drawing.Point(13, 55);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(450, 79);
-            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgLogo.TabIndex = 9;
-            this.imgLogo.TabStop = false;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 175);
+            this.label1.Location = new System.Drawing.Point(20, 137);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(610, 134);
+            this.label1.Size = new System.Drawing.Size(578, 56);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Habitat for Humanity ReStore Volunteer Hours";
+            this.label1.Text = "ReStore Volunteer Hours";
             // 
             // lsbxStore
             // 
@@ -117,7 +110,7 @@
             "Kernersville ReStore",
             "Lewisville ReStore",
             "King ReStore"});
-            this.lsbxStore.Location = new System.Drawing.Point(600, 242);
+            this.lsbxStore.Location = new System.Drawing.Point(605, 137);
             this.lsbxStore.Name = "lsbxStore";
             this.lsbxStore.ScrollAlwaysVisible = true;
             this.lsbxStore.Size = new System.Drawing.Size(400, 56);
@@ -531,18 +524,19 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(19, 327);
+            this.lblName.Location = new System.Drawing.Point(25, 216);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(89, 29);
+            this.lblName.Size = new System.Drawing.Size(148, 29);
             this.lblName.TabIndex = 65;
-            this.lblName.Text = "Name:";
+            this.lblName.Text = "First Name:";
             // 
-            // textBox42
+            // txtFirstName
             // 
-            this.textBox42.Location = new System.Drawing.Point(114, 331);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(484, 26);
-            this.textBox42.TabIndex = 66;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(23, 248);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(484, 35);
+            this.txtFirstName.TabIndex = 66;
             // 
             // button1
             // 
@@ -555,14 +549,71 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 290);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 29);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "Last Name:";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(23, 322);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(484, 35);
+            this.txtLastName.TabIndex = 69;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HabitatReStoreWFApp.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 77);
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(819, 216);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(112, 82);
+            this.btnPrint.TabIndex = 71;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(605, 216);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 82);
+            this.button2.TabIndex = 72;
+            this.button2.Text = "New Volunteer";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmVolunteerHours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1026, 867);
+            this.ClientSize = new System.Drawing.Size(1026, 1050);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox42);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtTotalHours);
             this.Controls.Add(this.txtTotalTime11);
@@ -615,10 +666,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lsbxStore);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.imgLogo);
             this.Name = "frmVolunteerHours";
             this.Text = "ReStore Volunteer Hours";
-            this.Controls.SetChildIndex(this.imgLogo, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.lsbxStore, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -671,17 +720,20 @@
             this.Controls.SetChildIndex(this.txtTotalTime11, 0);
             this.Controls.SetChildIndex(this.txtTotalHours, 0);
             this.Controls.SetChildIndex(this.lblName, 0);
-            this.Controls.SetChildIndex(this.textBox42, 0);
+            this.Controls.SetChildIndex(this.txtFirstName, 0);
             this.Controls.SetChildIndex(this.button1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.txtLastName, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.btnPrint, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lsbxStore;
         private System.Windows.Forms.Label label2;
@@ -734,7 +786,12 @@
         private System.Windows.Forms.TextBox txtTotalTime11;
         private System.Windows.Forms.TextBox txtTotalHours;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button button2;
     }
 }
