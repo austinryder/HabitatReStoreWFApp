@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.Donation_PickUp_ScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Habitat_Restore_V2DataSet = new HabitatReStoreWFApp.Habitat_Restore_V2DataSet();
             this.DonationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -236,18 +236,18 @@
             this.reportViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource9.Name = "PickupSchedules";
-            reportDataSource9.Value = this.Donation_PickUp_ScheduleBindingSource;
-            reportDataSource10.Name = "Donations";
-            reportDataSource10.Value = this.DonationBindingSource;
-            reportDataSource11.Name = "Store";
-            reportDataSource11.Value = this.StoreBindingSource;
-            reportDataSource12.Name = "Driver";
-            reportDataSource12.Value = null;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource9);
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource10);
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource11);
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource1.Name = "PickupSchedules";
+            reportDataSource1.Value = this.Donation_PickUp_ScheduleBindingSource;
+            reportDataSource2.Name = "Donations";
+            reportDataSource2.Value = this.DonationBindingSource;
+            reportDataSource3.Name = "Store";
+            reportDataSource3.Value = this.StoreBindingSource;
+            reportDataSource4.Name = "Driver";
+            reportDataSource4.Value = null;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HabitatReStoreWFApp.Reports.DailyPickups.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(12, 166);
             this.reportViewer.Name = "reportViewer";

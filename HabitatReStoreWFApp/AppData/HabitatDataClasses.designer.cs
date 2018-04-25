@@ -278,6 +278,27 @@ namespace HabitatReStoreWFApp.AppData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), store_ID, volunteer_ID, category_Type_ID, sign_In, sign_Out);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_UpdateDonation")]
+		public int usp_UpdateDonation1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Donation_ID", DbType="Int")] System.Nullable<int> donation_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Store_ID", DbType="Int")] System.Nullable<int> store_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status_Map_ID", DbType="Int")] System.Nullable<int> status_Map_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(255)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="VarChar(255)")] string address2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="VarChar(45)")] string city, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="State", DbType="Char(2)")] string state, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ZipCode", DbType="VarChar(10)")] string zipCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bypass_Flag", DbType="Bit")] System.Nullable<bool> bypass_Flag)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), donation_ID, store_ID, status_Map_ID, address, address2, city, state, zipCode, bypass_Flag);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_UpdateVolunteer")]
+		public int usp_UpdateVolunteer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Volunteer_ID", DbType="Int")] System.Nullable<int> volunteer_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status_Map_ID", DbType="Int")] System.Nullable<int> status_Map_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Last_Name", DbType="VarChar(45)")] string last_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="First_Name", DbType="VarChar(45)")] string first_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Middle_Name", DbType="VarChar(45)")] string middle_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="Char(1)")] System.Nullable<char> gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DOB", DbType="Date")] System.Nullable<System.DateTime> dOB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SSN", DbType="NChar(9)")] string sSN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(255)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="VarChar(255)")] string address2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="VarChar(45)")] string city, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="State", DbType="Char(2)")] string state, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ZipCode", DbType="VarChar(10)")] string zipCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone", DbType="VarChar(10)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(255)")] string email)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), volunteer_ID, status_Map_ID, last_Name, first_Name, middle_Name, gender, dOB, sSN, address, address2, city, state, zipCode, phone, email);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_UpdateItem")]
+		public int usp_UpdateItem([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Item_ID", DbType="Int")] System.Nullable<int> item_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Donation_ID", DbType="Int")] System.Nullable<int> donation_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Item_Category_ID", DbType="Int")] System.Nullable<int> item_Category_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Donation_Image", DbType="VarBinary(MAX)")] System.Data.Linq.Binary donation_Image, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Description", DbType="VarChar(255)")] string description)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), item_ID, donation_ID, item_Category_ID, donation_Image, description);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Donation")]

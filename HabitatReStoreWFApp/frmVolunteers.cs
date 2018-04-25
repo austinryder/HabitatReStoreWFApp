@@ -21,13 +21,17 @@ namespace HabitatReStoreWFApp
         public frmVolunteers()
         {
             InitializeComponent();
-            
+            string[] genders = { "M", "F", "O" };
+            cboGender.DataSource = genders;
         }
 
         private void frmVolunteers_Load(object sender, EventArgs e)
         {
+            InitializeStatusOptions();
             GetAllVolunteers();
             DisplayVolunteer(volunteerIndex);
+
+            DisableEdits();
         }
         private void InitializeStatusOptions()
         {
@@ -65,8 +69,9 @@ namespace HabitatReStoreWFApp
             txtFName.Text = selectedVolunteer.First_Name;
             txtMName.Text = selectedVolunteer.Middle_Name;
             txtLName.Text = selectedVolunteer.Last_Name;
-            txtGender.Text = selectedVolunteer.Gender.ToString();
-            txtDOB.Text = selectedVolunteer.DOB.ToString();
+            cboGender.SelectedItem = selectedVolunteer.Gender.ToString();
+            cboStatus.SelectedItem = selectedVolunteer.Status_Map;
+            pickDate.Value = selectedVolunteer.DOB;
             txtCity.Text = selectedVolunteer.City;
             txtState.Text = selectedVolunteer.State.ToString();
         }
@@ -122,65 +127,116 @@ namespace HabitatReStoreWFApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtFName.Text))
-            {
-                MessageBox.Show("You must enter a first name.");
-            }
-            else if (string.IsNullOrEmpty(txtMName.Text))
-            {
-                MessageBox.Show("You must enter a middle name.");
-            }
-            else if (string.IsNullOrEmpty(txtLName.Text))
-            {
-                MessageBox.Show("You must enter a last name.");
-            }
-            else if (string.IsNullOrEmpty(txtDOB.Text))
-            {
-                MessageBox.Show("You must enter a date of birth.");
-            }
-            else if (string.IsNullOrEmpty(txtAddress.Text))
-            {
-                MessageBox.Show("You must enter an address.");
-            }
-            else if(string.IsNullOrEmpty(txtCity.Text))
-            {
-                MessageBox.Show("You must enter a city.");
-            }
-            else if (string.IsNullOrEmpty(txtState.Text))
-            {
-                MessageBox.Show("You must enter a state.");
-            }
-            else if (string.IsNullOrEmpty(txtZipCode.Text))
-            {
-                MessageBox.Show("You must enter a zip code.");
-            }
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                selectedVolunteer.Status_Map = (Status_Map)cboStatus.SelectedItem;
+                selectedVolunteer.Last_Name = txtLName.Text;
+                selectedVolunteer.First_Name = txtFName.Text;
+                selectedVolunteer.Middle_Name = txtMName.Text;
+                selectedVolunteer.Gender = cboGender.SelectedItem.ToString()[0];
+                selectedVolunteer.DOB = pickDate.Value;
+                selectedVolunteer.Address = txtAddress.Text;
+                selectedVolunteer.Address2 = txtAddress2.Text;
+                selectedVolunteer.City = txtCity.Text;
+                selectedVolunteer.State = txtState.Text;
+                selectedVolunteer.Zip_Code = txtZipCode.Text;
 
+                allVolunteers[volunteerIndex] = selectedVolunteer;
+
+                db.usp_UpdateVolunteer(
+                    volunteer_ID: selectedVolunteer.Volunteer_ID,
+                    status_Map_ID: selectedVolunteer.Status_Map_ID,
+                    last_Name: selectedVolunteer.Last_Name,
+                    first_Name: selectedVolunteer.First_Name,
+                    middle_Name: selectedVolunteer.Middle_Name,
+                    gender: selectedVolunteer.Gender,
+                    dOB: selectedVolunteer.DOB,
+                    sSN: selectedVolunteer.SSN,
+                    address: selectedVolunteer.Address,
+                    address2: selectedVolunteer.Address2,
+                    city: selectedVolunteer.City,
+                    state: selectedVolunteer.State,
+                    zipCode: selectedVolunteer.Zip_Code,
+                    phone: selectedVolunteer.Phone,
+                    email: selectedVolunteer.Email
+                    );
+
+                DisplayVolunteer(volunteerIndex);
+                MessageBox.Show("Volunteer information updated.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating volunteer information");
+                Console.WriteLine(ex.StackTrace);
+            }
         }
 
-        private void btnCancelVol_Click(object sender, EventArgs e)
+        private void chkEnableEdits_CheckedChanged(object sender, EventArgs e)
         {
-            
-            DialogResult result = (MessageBox.Show("Do you really want to delete the volunteer?", "Delete Volunteer", MessageBoxButtons.YesNo));
-            if (result == DialogResult.Yes)
+            if (chkEnableEdits.Checked)
             {
-                txtFName.Text = "";
-                txtMName.Text = "";
-                txtLName.Text = "";
-                txtGender.Text = "";
-                txtDOB.Text = "";
-                txtAddress.Text = "";
-                txtAddress2.Text = "";
-                txtCity.Text = "";
-                txtState.Text = "";
-                txtZipCode.Text = "";
-
+                EnableEdits();
+                btnEdit.Visible = true;
             }
+            else
+            {
+                DisableEdits();
+                btnEdit.Visible = false;
+            }
+        }
+
+        private void DisableEdits()
+        {
+            txtAddress.Enabled = false;
+            txtAddress2.Enabled = false;
+            txtCity.Enabled = false;
+            txtFName.Enabled = false;
+            txtLName.Enabled = false;
+            txtMName.Enabled = false;
+            txtState.Enabled = false;
+            txtVolunteerID.Enabled = false;
+            txtZipCode.Enabled = false;
+            cboGender.Enabled = false;
+            cboStatus.Enabled = false;
+            pickDate.Enabled = false;
+        }
+
+        private void EnableEdits()
+        {
+            txtAddress.Enabled = true;
+            txtAddress2.Enabled = true;
+            txtCity.Enabled = true;
+            txtFName.Enabled = true;
+            txtLName.Enabled = true;
+            txtMName.Enabled = true;
+            txtState.Enabled = true;
+            txtZipCode.Enabled = true;
+            cboGender.Enabled = true;
+            cboStatus.Enabled = true;
+            pickDate.Enabled = true;
+        }
+
+        //keyboard shortcuts
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.Left):
+                    btnPrevious.PerformClick();
+                    break;
+                case (Keys.Right):
+                    btnNext.PerformClick();
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

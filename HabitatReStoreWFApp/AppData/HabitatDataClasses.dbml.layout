@@ -123,7 +123,7 @@
         <classShapeMoniker Id="e289e193-cc7e-4a48-9d91-fad925be5eb1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 9.61620198567708); (8.63541666666667 : 9.61620198567708 : JumpStart); (8.80208333333333 : 9.61620198567708 : JumpEnd); (9 : 9.61620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 9.61620198567708); (9 : 9.61620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Donor/Donor_Donation" />
       <nodes>
         <classShapeMoniker Id="ba61d534-20fe-480e-bdfa-3c5a7de670c2" />
@@ -144,14 +144,14 @@
         <classShapeMoniker Id="fd1b8635-f4d8-4d60-ab2c-cf9b02d3fa01" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.4431469726562); (5.79166666666667 : 10.4431469726562 : JumpStart); (5.95833333333333 : 10.4431469726562 : JumpEnd); (6 : 10.4431469726562); (6 : 11.4343082682292); (9.968748 : 11.4343082682292); (9.968748 : 10.9824039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.4431469726562); (6 : 10.4431469726562); (6 : 11.4343082682292); (9.968748 : 11.4343082682292); (9.968748 : 10.9824039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Status_Map/Status_Map_Donation" />
       <nodes>
         <classShapeMoniker Id="345b3a4f-a653-4008-8127-16c95284b3e4" />
         <classShapeMoniker Id="d9fd34af-ba3b-4e97-892b-a246bf9f66fd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.0340734863281); (5.79166666666667 : 10.0340734863281 : JumpStart); (5.95833333333333 : 10.0340734863281 : JumpEnd); (6.25 : 10.0340734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 10.0340734863281); (6.25 : 10.0340734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Status_Map/Status_Map_Donor" />
       <nodes>
         <classShapeMoniker Id="345b3a4f-a653-4008-8127-16c95284b3e4" />
@@ -186,7 +186,7 @@
         <classShapeMoniker Id="24c2e1ab-8a9f-4e1b-9525-8bc903d9d194" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 13.6642976888021); (9 : 13.6642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 13.6642976888021); (8.63541666666667 : 13.6642976888021 : JumpStart); (8.80208333333333 : 13.6642976888021 : JumpEnd); (9 : 13.6642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Driver/Driver_Vehicle_Driver" />
       <nodes>
         <classShapeMoniker Id="ef31821d-14b9-469c-acd3-c2c91fe02960" />
@@ -207,14 +207,14 @@
         <classShapeMoniker Id="24c2e1ab-8a9f-4e1b-9525-8bc903d9d194" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 22.6458968098958); (8.625 : 23.0208968098958); (8.625 : 22.5); (8.65982443490112 : 22.5348244349011 : JumpStart); (8.77767556509888 : 22.6526755650989 : JumpEnd); (9 : 22.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 22.6458968098958); (8.625 : 23.0208968098958); (8.625 : 22.5); (9 : 22.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Vehicle/Vehicle_Vehicle_Tracking" />
       <nodes>
         <classShapeMoniker Id="24c2e1ab-8a9f-4e1b-9525-8bc903d9d194" />
         <classShapeMoniker Id="dc4e33a0-4eb0-4d1f-8831-a56e383be836" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 18.0969962565104); (8.54166666666667 : 18.0969962565104 : JumpStart); (8.80208333333333 : 18.0969962565104 : JumpEnd); (9 : 18.0969962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 18.0969962565104); (9 : 18.0969962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Volunteer/Volunteer_Volunteer_Category" />
       <nodes>
         <classShapeMoniker Id="0b0c6cbb-e01d-48d4-b10d-3c3e24f9fbf6" />
@@ -256,7 +256,7 @@
         <classShapeMoniker Id="3f481cf3-5ac0-4454-9262-da812eecc658" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 4.375); (7.25 : 3.56814697265625); (9 : 3.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.53125 : 4.375); (7.53125 : 3.816591796875); (9 : 3.816591796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/HabitatDataClassesDataContext/Store/Store_ZipCode_Range" />
       <nodes>
         <classShapeMoniker Id="95d33ee6-ea8b-47f7-bd6b-93889d0256c7" />

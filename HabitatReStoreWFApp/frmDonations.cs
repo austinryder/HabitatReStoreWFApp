@@ -33,8 +33,19 @@ namespace HabitatReStoreWFApp
 
         private void frmDonations_Load(object sender, EventArgs e)
         {
+            InitializeStores();
             InitializeStatusOptions();
+            
             DisableEdits();
+        }
+
+        private void InitializeStores()
+        {
+            var stores = from s in db.Stores
+                         select s;
+
+            cboStore.DataSource = stores;
+            cboStore.DisplayMember = "Name";
         }
 
         private void DisableEdits()
@@ -42,9 +53,8 @@ namespace HabitatReStoreWFApp
             btnEdit.Visible = false;
             txtAddress.Enabled = false;
             txtAddress2.Enabled = false;
-            txtDescription.Enabled = false;
             txtDonorID.Enabled = false;
-            txtStore.Enabled = false;
+            cboStore.Enabled = false;
             txtZipCode.Enabled = false;
             cboStatus.Enabled = false;
         }
@@ -54,9 +64,8 @@ namespace HabitatReStoreWFApp
             btnEdit.Visible = true;
             txtAddress.Enabled = true;
             txtAddress2.Enabled = true;
-            txtDescription.Enabled = true;
             txtDonorID.Enabled = true;
-            txtStore.Enabled = true;
+            cboStore.Enabled = true;
             txtZipCode.Enabled = true;
             cboStatus.Enabled = true;
         }
@@ -95,7 +104,7 @@ namespace HabitatReStoreWFApp
         {
            donationIndex = 0;
            itemsIndex = 0;
-           int statusID = ((Status_Map)cboViewStatus.SelectedItem).Status_Entity_ID;
+           int statusID = ((Status_Map)cboViewStatus.SelectedItem).Status_Map_ID;
 
            var donations = from d in db.Donations
                            where d.Status_Map_ID == statusID
@@ -135,7 +144,7 @@ namespace HabitatReStoreWFApp
 
             txtDonationID.Text = selectedDonation.Donation_ID.ToString();
             txtDonorID.Text = selectedDonation.Donor_ID.ToString();
-            txtStore.Text = selectedDonation.Store.Name.ToString();
+            cboStore.SelectedItem = selectedDonation.Store;
             txtAddress.Text = selectedDonation.Address;
             txtAddress2.Text = selectedDonation.Address2;
             txtZipCode.Text = selectedDonation.ZipCode;
@@ -145,17 +154,27 @@ namespace HabitatReStoreWFApp
 
         private void DisplayItem(int itemsIndex)
         {
-            Item thisItem = selectedItems[itemsIndex];
-
-            txtItemID.Text = thisItem.Item_ID.ToString();
-            txtItemCategory.Text = thisItem.Item_Category.Description.ToString();
-            txtDescription.Text = thisItem.Description;
-            if (thisItem.Donation_Image != null && thisItem.Donation_Image.ToArray().Length > 0)
+            if (selectedItems.Count != 0)
             {
-                picImage.Image = ConvertToImage(thisItem.Donation_Image.ToArray());
+                Item thisItem = selectedItems[itemsIndex];
+
+                txtItemID.Text = thisItem.Item_ID.ToString();
+                txtItemCategory.Text = thisItem.Item_Category.Description.ToString();
+                txtDescription.Text = thisItem.Description;
+                if (thisItem.Donation_Image != null && thisItem.Donation_Image.ToArray().Length > 0)
+                {
+                    picImage.Image = ConvertToImage(thisItem.Donation_Image.ToArray());
+                }
+                else
+                {
+                    picImage.Image = null;
+                }
             }
             else
             {
+                txtItemID.Text = "";
+                txtItemCategory.Text = "";
+                txtDescription.Text = "";
                 picImage.Image = null;
             }
         }
@@ -189,6 +208,9 @@ namespace HabitatReStoreWFApp
             {
                 btnNext.Enabled = true;
             }
+
+            btnItemsNext.Enabled = true;
+            btnItemsPrevious.Enabled = false;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -213,6 +235,9 @@ namespace HabitatReStoreWFApp
             {
                 btnPrevious.Enabled = true;
             }
+
+            btnItemsNext.Enabled = true;
+            btnItemsPrevious.Enabled = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -258,6 +283,62 @@ namespace HabitatReStoreWFApp
             {
                 btnItemsPrevious.Enabled = true;
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedDonation.Status_Map = (Status_Map)cboStatus.SelectedItem;
+                selectedDonation.Donor_ID = this.selectedDonation.Donor_ID;
+                selectedDonation.Store = (Store)cboStore.SelectedItem;
+                selectedDonation.Address = txtAddress.Text;
+                selectedDonation.Address2 = txtAddress2.Text;
+                selectedDonation.ZipCode = txtZipCode.Text;
+                selectedDonation.Bypass_Flag = chkBypass.Checked;
+                selectedDonation.Donation_ID = this.selectedDonation.Donation_ID;
+                selectedDonation.City = this.selectedDonation.City;
+                selectedDonation.State = this.selectedDonation.State;
+
+                allDonations[donationIndex] = selectedDonation;
+
+                db.usp_UpdateDonation(
+                    donation_ID: selectedDonation.Donation_ID,
+                    store_ID: selectedDonation.Store_ID,
+                    status_Map_ID: selectedDonation.Status_Map_ID,
+                    city: selectedDonation.City,
+                    state: selectedDonation.State,
+                    address: selectedDonation.Address,
+                    address2: selectedDonation.Address2,
+                    zipCode: selectedDonation.ZipCode,
+                    bypass_Flag: selectedDonation.Bypass_Flag
+                    );
+
+                DisplayDonation(donationIndex);
+
+                MessageBox.Show("Donation information updated.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating donation information");
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+
+        //keyboard shortcuts
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.Left):
+                    btnPrevious.PerformClick();
+                    break;
+                case (Keys.Right):
+                    btnNext.PerformClick();
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

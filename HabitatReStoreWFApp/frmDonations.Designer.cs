@@ -43,6 +43,7 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboStore = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtDonorID = new System.Windows.Forms.TextBox();
-            this.txtStore = new System.Windows.Forms.TextBox();
             this.txtDonationID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(797, 36);
+            this.btnBack.Location = new System.Drawing.Point(596, 36);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 20;
@@ -147,7 +147,7 @@
             this.cboViewStatus.FormattingEnabled = true;
             this.cboViewStatus.Location = new System.Drawing.Point(75, 92);
             this.cboViewStatus.Name = "cboViewStatus";
-            this.cboViewStatus.Size = new System.Drawing.Size(146, 28);
+            this.cboViewStatus.Size = new System.Drawing.Size(176, 28);
             this.cboViewStatus.TabIndex = 22;
             this.cboViewStatus.SelectedIndexChanged += new System.EventHandler(this.cboViewStatus_SelectedIndexChanged);
             // 
@@ -208,6 +208,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboStore);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtLName);
@@ -224,7 +225,6 @@
             this.groupBox1.Controls.Add(this.txtAddress2);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtDonorID);
-            this.groupBox1.Controls.Add(this.txtStore);
             this.groupBox1.Controls.Add(this.txtDonationID);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -242,6 +242,15 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboStore
+            // 
+            this.cboStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStore.FormattingEnabled = true;
+            this.cboStore.Location = new System.Drawing.Point(125, 166);
+            this.cboStore.Name = "cboStore";
+            this.cboStore.Size = new System.Drawing.Size(293, 28);
+            this.cboStore.TabIndex = 54;
             // 
             // label19
             // 
@@ -286,6 +295,7 @@
             // 
             // txtItemCategory
             // 
+            this.txtItemCategory.Enabled = false;
             this.txtItemCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemCategory.Location = new System.Drawing.Point(7, 277);
             this.txtItemCategory.Name = "txtItemCategory";
@@ -398,6 +408,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Enabled = false;
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(7, 336);
             this.txtDescription.Name = "txtDescription";
@@ -406,6 +417,7 @@
             // 
             // txtLName
             // 
+            this.txtLName.Enabled = false;
             this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(124, 134);
             this.txtLName.Name = "txtLName";
@@ -424,6 +436,7 @@
             // 
             // txtFName
             // 
+            this.txtFName.Enabled = false;
             this.txtFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(124, 102);
             this.txtFName.Name = "txtFName";
@@ -450,6 +463,7 @@
             this.btnEdit.Text = "Submit Changes";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // chkBypass
             // 
@@ -501,14 +515,6 @@
             this.txtDonorID.Name = "txtDonorID";
             this.txtDonorID.Size = new System.Drawing.Size(56, 26);
             this.txtDonorID.TabIndex = 40;
-            // 
-            // txtStore
-            // 
-            this.txtStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStore.Location = new System.Drawing.Point(124, 166);
-            this.txtStore.Name = "txtStore";
-            this.txtStore.Size = new System.Drawing.Size(294, 26);
-            this.txtStore.TabIndex = 39;
             // 
             // txtDonationID
             // 
@@ -675,7 +681,6 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtDonorID;
-        private System.Windows.Forms.TextBox txtStore;
         private System.Windows.Forms.TextBox txtDonationID;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.CheckBox chkBypass;
@@ -697,5 +702,6 @@
         private System.Windows.Forms.TextBox txtItemID;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cboStore;
     }
 }
