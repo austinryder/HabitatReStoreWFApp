@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVolunteerHours));
             this.label1 = new System.Windows.Forms.Label();
             this.lsbxStore = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,13 +86,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 137);
+            this.label1.Location = new System.Drawing.Point(389, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(578, 56);
@@ -108,7 +111,7 @@
             "Kernersville ReStore",
             "Lewisville ReStore",
             "King ReStore"});
-            this.lsbxStore.Location = new System.Drawing.Point(605, 137);
+            this.lsbxStore.Location = new System.Drawing.Point(567, 165);
             this.lsbxStore.Name = "lsbxStore";
             this.lsbxStore.ScrollAlwaysVisible = true;
             this.lsbxStore.Size = new System.Drawing.Size(400, 56);
@@ -522,7 +525,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(25, 216);
+            this.lblName.Location = new System.Drawing.Point(25, 133);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(148, 29);
             this.lblName.TabIndex = 65;
@@ -531,7 +534,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(23, 248);
+            this.txtFirstName.Location = new System.Drawing.Point(23, 165);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(484, 35);
             this.txtFirstName.TabIndex = 66;
@@ -551,7 +554,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 290);
+            this.label6.Location = new System.Drawing.Point(25, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 29);
             this.label6.TabIndex = 68;
@@ -560,7 +563,7 @@
             // txtLastName
             // 
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(23, 322);
+            this.txtLastName.Location = new System.Drawing.Point(23, 246);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(484, 35);
             this.txtLastName.TabIndex = 69;
@@ -575,6 +578,15 @@
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 287);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(708, 86);
+            this.pictureBox2.TabIndex = 71;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmVolunteerHours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -582,6 +594,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1026, 1050);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label6);
@@ -639,6 +652,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lsbxStore);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(1048, 1018);
             this.Name = "frmVolunteerHours";
             this.Text = "ReStore Volunteer Hours";
             this.Controls.SetChildIndex(this.label1, 0);
@@ -698,7 +712,9 @@
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.txtLastName, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,5 +778,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
