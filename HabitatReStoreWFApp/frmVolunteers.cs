@@ -225,10 +225,10 @@ namespace HabitatReStoreWFApp
             {
                 case (Keys.Left):
                     btnPrevious.PerformClick();
-                    break;
+                    return true;
                 case (Keys.Right):
                     btnNext.PerformClick();
-                    break;
+                    return true;
             }
 
             return base.ProcessCmdKey(ref msg, keyData);

@@ -299,6 +299,13 @@ namespace HabitatReStoreWFApp.AppData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), item_ID, donation_ID, item_Category_ID, donation_Image, description);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_ReportPickUpByStore")]
+		public ISingleResult<Donation_PickUp_Schedule> usp_ReportPickUpByStore([global::System.Data.Linq.Mapping.ParameterAttribute(Name="StoreID", DbType="Int")] System.Nullable<int> storeID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PickUpDate", DbType="Date")] System.Nullable<System.DateTime> pickUpDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), storeID, pickUpDate);
+			return ((ISingleResult<Donation_PickUp_Schedule>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Donation")]

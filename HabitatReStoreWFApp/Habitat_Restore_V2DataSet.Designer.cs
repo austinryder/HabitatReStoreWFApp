@@ -106,16 +106,6 @@ namespace HabitatReStoreWFApp {
         
         private global::System.Data.DataRelation relationStore_ZipCode_Range;
         
-        private global::System.Data.DataRelation relationDonation_Donation_PickUp_Schedule1;
-        
-        private global::System.Data.DataRelation relationItem_Donation1;
-        
-        private global::System.Data.DataRelation relationDonor_Donation1;
-        
-        private global::System.Data.DataRelation relationR_241;
-        
-        private global::System.Data.DataRelation relationStore_Donation1;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -723,11 +713,6 @@ namespace HabitatReStoreWFApp {
             this.relationStore_Volunteer_Schedule = this.Relations["Store_Volunteer_Schedule"];
             this.relationVolunteer_Volunteer_Schedule = this.Relations["Volunteer_Volunteer_Schedule"];
             this.relationStore_ZipCode_Range = this.Relations["Store_ZipCode_Range"];
-            this.relationDonation_Donation_PickUp_Schedule1 = this.Relations["Donation_Donation_PickUp_Schedule1"];
-            this.relationItem_Donation1 = this.Relations["Item_Donation1"];
-            this.relationDonor_Donation1 = this.Relations["Donor_Donation1"];
-            this.relationR_241 = this.Relations["R_241"];
-            this.relationStore_Donation1 = this.Relations["Store_Donation1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -862,26 +847,6 @@ namespace HabitatReStoreWFApp {
                         this.tableStore.Store_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableZipCode_Range.Store_IDColumn}, false);
             this.Relations.Add(this.relationStore_ZipCode_Range);
-            this.relationDonation_Donation_PickUp_Schedule1 = new global::System.Data.DataRelation("Donation_Donation_PickUp_Schedule1", new global::System.Data.DataColumn[] {
-                        this.tableDonations_Per_Store.Donation_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDonation_PickUp_Schedule.Donation_IDColumn}, false);
-            this.Relations.Add(this.relationDonation_Donation_PickUp_Schedule1);
-            this.relationItem_Donation1 = new global::System.Data.DataRelation("Item_Donation1", new global::System.Data.DataColumn[] {
-                        this.tableDonations_Per_Store.Donation_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItem.Donation_IDColumn}, false);
-            this.Relations.Add(this.relationItem_Donation1);
-            this.relationDonor_Donation1 = new global::System.Data.DataRelation("Donor_Donation1", new global::System.Data.DataColumn[] {
-                        this.tableDonor.Donor_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDonations_Per_Store.Donor_IDColumn}, false);
-            this.Relations.Add(this.relationDonor_Donation1);
-            this.relationR_241 = new global::System.Data.DataRelation("R_241", new global::System.Data.DataColumn[] {
-                        this.tableStatus_Map.Status_Map_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDonations_Per_Store.Status_Map_IDColumn}, false);
-            this.Relations.Add(this.relationR_241);
-            this.relationStore_Donation1 = new global::System.Data.DataRelation("Store_Donation1", new global::System.Data.DataColumn[] {
-                        this.tableStore.Store_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDonations_Per_Store.Store_IDColumn}, false);
-            this.Relations.Add(this.relationStore_Donation1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7563,29 +7528,9 @@ namespace HabitatReStoreWFApp {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Donations_Per_StoreDataTable : global::System.Data.TypedTableBase<Donations_Per_StoreRow> {
             
-            private global::System.Data.DataColumn columnStore_ID;
-            
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnDonation_ID;
-            
-            private global::System.Data.DataColumn columnDonor_ID;
-            
-            private global::System.Data.DataColumn columnStatus_Map_ID;
-            
-            private global::System.Data.DataColumn columnAddress;
-            
-            private global::System.Data.DataColumn columnAddress2;
-            
-            private global::System.Data.DataColumn columnCity;
-            
-            private global::System.Data.DataColumn columnState;
-            
-            private global::System.Data.DataColumn columnZipCode;
-            
-            private global::System.Data.DataColumn columnBypass_Flag;
-            
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnPickUp_Window_Start;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7622,14 +7567,6 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Store_IDColumn {
-                get {
-                    return this.columnStore_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn NameColumn {
                 get {
                     return this.columnName;
@@ -7638,81 +7575,9 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Donation_IDColumn {
+            public global::System.Data.DataColumn PickUp_Window_StartColumn {
                 get {
-                    return this.columnDonation_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Donor_IDColumn {
-                get {
-                    return this.columnDonor_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Status_Map_IDColumn {
-                get {
-                    return this.columnStatus_Map_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
-                get {
-                    return this.columnAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Address2Column {
-                get {
-                    return this.columnAddress2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CityColumn {
-                get {
-                    return this.columnCity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StateColumn {
-                get {
-                    return this.columnState;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ZipCodeColumn {
-                get {
-                    return this.columnZipCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Bypass_FlagColumn {
-                get {
-                    return this.columnBypass_Flag;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
+                    return this.columnPickUp_Window_Start;
                 }
             }
             
@@ -7753,38 +7618,14 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow AddDonations_Per_StoreRow(string Name, DonorRow parentDonorRowByDonor_Donation1, Status_MapRow parentStatus_MapRowByR_241, string Address, string Address2, string City, string State, string ZipCode, bool Bypass_Flag, string Description) {
+            public Donations_Per_StoreRow AddDonations_Per_StoreRow(string Name, System.DateTime PickUp_Window_Start) {
                 Donations_Per_StoreRow rowDonations_Per_StoreRow = ((Donations_Per_StoreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Name,
-                        null,
-                        null,
-                        null,
-                        Address,
-                        Address2,
-                        City,
-                        State,
-                        ZipCode,
-                        Bypass_Flag,
-                        Description};
-                if ((parentDonorRowByDonor_Donation1 != null)) {
-                    columnValuesArray[3] = parentDonorRowByDonor_Donation1[0];
-                }
-                if ((parentStatus_MapRowByR_241 != null)) {
-                    columnValuesArray[4] = parentStatus_MapRowByR_241[0];
-                }
+                        PickUp_Window_Start};
                 rowDonations_Per_StoreRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDonations_Per_StoreRow);
                 return rowDonations_Per_StoreRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow FindByStore_IDDonation_ID(int Store_ID, int Donation_ID) {
-                return ((Donations_Per_StoreRow)(this.Rows.Find(new object[] {
-                            Store_ID,
-                            Donation_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7804,76 +7645,20 @@ namespace HabitatReStoreWFApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnStore_ID = base.Columns["Store_ID"];
                 this.columnName = base.Columns["Name"];
-                this.columnDonation_ID = base.Columns["Donation_ID"];
-                this.columnDonor_ID = base.Columns["Donor_ID"];
-                this.columnStatus_Map_ID = base.Columns["Status_Map_ID"];
-                this.columnAddress = base.Columns["Address"];
-                this.columnAddress2 = base.Columns["Address2"];
-                this.columnCity = base.Columns["City"];
-                this.columnState = base.Columns["State"];
-                this.columnZipCode = base.Columns["ZipCode"];
-                this.columnBypass_Flag = base.Columns["Bypass_Flag"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnPickUp_Window_Start = base.Columns["PickUp_Window_Start"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnStore_ID = new global::System.Data.DataColumn("Store_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStore_ID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnDonation_ID = new global::System.Data.DataColumn("Donation_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDonation_ID);
-                this.columnDonor_ID = new global::System.Data.DataColumn("Donor_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDonor_ID);
-                this.columnStatus_Map_ID = new global::System.Data.DataColumn("Status_Map_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus_Map_ID);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
-                this.columnAddress2 = new global::System.Data.DataColumn("Address2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress2);
-                this.columnCity = new global::System.Data.DataColumn("City", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCity);
-                this.columnState = new global::System.Data.DataColumn("State", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnState);
-                this.columnZipCode = new global::System.Data.DataColumn("ZipCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZipCode);
-                this.columnBypass_Flag = new global::System.Data.DataColumn("Bypass_Flag", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBypass_Flag);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnStore_ID,
-                                this.columnDonation_ID}, true));
-                this.columnStore_ID.AutoIncrement = true;
-                this.columnStore_ID.AutoIncrementSeed = -1;
-                this.columnStore_ID.AutoIncrementStep = -1;
-                this.columnStore_ID.AllowDBNull = false;
-                this.columnStore_ID.ReadOnly = true;
+                this.columnPickUp_Window_Start = new global::System.Data.DataColumn("PickUp_Window_Start", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPickUp_Window_Start);
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 255;
-                this.columnDonation_ID.AutoIncrement = true;
-                this.columnDonation_ID.AutoIncrementSeed = -1;
-                this.columnDonation_ID.AutoIncrementStep = -1;
-                this.columnDonation_ID.AllowDBNull = false;
-                this.columnDonation_ID.ReadOnly = true;
-                this.columnDonor_ID.AllowDBNull = false;
-                this.columnStatus_Map_ID.AllowDBNull = false;
-                this.columnAddress.AllowDBNull = false;
-                this.columnAddress.MaxLength = 255;
-                this.columnAddress2.MaxLength = 255;
-                this.columnCity.AllowDBNull = false;
-                this.columnCity.MaxLength = 45;
-                this.columnState.AllowDBNull = false;
-                this.columnState.MaxLength = 2;
-                this.columnZipCode.AllowDBNull = false;
-                this.columnZipCode.MaxLength = 10;
-                this.columnBypass_Flag.AllowDBNull = false;
-                this.columnDescription.AllowDBNull = false;
-                this.columnDescription.MaxLength = 255;
+                this.columnPickUp_Window_Start.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8302,17 +8087,6 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow Donations_Per_StoreRow {
-                get {
-                    return ((Donations_Per_StoreRow)(this.GetParentRow(this.Table.ParentRelations["Donation_Donation_PickUp_Schedule1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Donation_Donation_PickUp_Schedule1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSpecial_InstructionsNull() {
                 return this.IsNull(this.tableDonation_PickUp_Schedule.Special_InstructionsColumn);
             }
@@ -8597,17 +8371,6 @@ namespace HabitatReStoreWFApp {
                 }
                 else {
                     return ((DonationRow[])(base.GetChildRows(this.Table.ChildRelations["Donor_Donation"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow[] GetDonations_Per_StoreRows() {
-                if ((this.Table.ChildRelations["Donor_Donation1"] == null)) {
-                    return new Donations_Per_StoreRow[0];
-                }
-                else {
-                    return ((Donations_Per_StoreRow[])(base.GetChildRows(this.Table.ChildRelations["Donor_Donation1"])));
                 }
             }
         }
@@ -8941,17 +8704,6 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow Donations_Per_StoreRow {
-                get {
-                    return ((Donations_Per_StoreRow)(this.GetParentRow(this.Table.ParentRelations["Item_Donation1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Item_Donation1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDonation_ImageNull() {
                 return this.IsNull(this.tableItem.Donation_ImageColumn);
             }
@@ -9208,17 +8960,6 @@ namespace HabitatReStoreWFApp {
                     return ((VolunteerRow[])(base.GetChildRows(this.Table.ChildRelations["Status_Map_Volunteer"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow[] GetDonations_Per_StoreRows() {
-                if ((this.Table.ChildRelations["R_241"] == null)) {
-                    return new Donations_Per_StoreRow[0];
-                }
-                else {
-                    return ((Donations_Per_StoreRow[])(base.GetChildRows(this.Table.ChildRelations["R_241"])));
-                }
-            }
         }
         
         /// <summary>
@@ -9381,17 +9122,6 @@ namespace HabitatReStoreWFApp {
                 }
                 else {
                     return ((ZipCode_RangeRow[])(base.GetChildRows(this.Table.ChildRelations["Store_ZipCode_Range"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donations_Per_StoreRow[] GetDonations_Per_StoreRows() {
-                if ((this.Table.ChildRelations["Store_Donation1"] == null)) {
-                    return new Donations_Per_StoreRow[0];
-                }
-                else {
-                    return ((Donations_Per_StoreRow[])(base.GetChildRows(this.Table.ChildRelations["Store_Donation1"])));
                 }
             }
         }
@@ -10421,17 +10151,6 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Store_ID {
-                get {
-                    return ((int)(this[this.tableDonations_Per_Store.Store_IDColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.Store_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Name {
                 get {
                     return ((string)(this[this.tableDonations_Per_Store.NameColumn]));
@@ -10443,183 +10162,12 @@ namespace HabitatReStoreWFApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Donation_ID {
+            public System.DateTime PickUp_Window_Start {
                 get {
-                    return ((int)(this[this.tableDonations_Per_Store.Donation_IDColumn]));
+                    return ((global::System.DateTime)(this[this.tableDonations_Per_Store.PickUp_Window_StartColumn]));
                 }
                 set {
-                    this[this.tableDonations_Per_Store.Donation_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Donor_ID {
-                get {
-                    return ((int)(this[this.tableDonations_Per_Store.Donor_IDColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.Donor_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Status_Map_ID {
-                get {
-                    return ((int)(this[this.tableDonations_Per_Store.Status_Map_IDColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.Status_Map_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Address {
-                get {
-                    return ((string)(this[this.tableDonations_Per_Store.AddressColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.AddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Address2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableDonations_Per_Store.Address2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Address2\' in table \'Donations_Per_Store\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDonations_Per_Store.Address2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string City {
-                get {
-                    return ((string)(this[this.tableDonations_Per_Store.CityColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.CityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string State {
-                get {
-                    return ((string)(this[this.tableDonations_Per_Store.StateColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.StateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ZipCode {
-                get {
-                    return ((string)(this[this.tableDonations_Per_Store.ZipCodeColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.ZipCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Bypass_Flag {
-                get {
-                    return ((bool)(this[this.tableDonations_Per_Store.Bypass_FlagColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.Bypass_FlagColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Description {
-                get {
-                    return ((string)(this[this.tableDonations_Per_Store.DescriptionColumn]));
-                }
-                set {
-                    this[this.tableDonations_Per_Store.DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DonorRow DonorRow {
-                get {
-                    return ((DonorRow)(this.GetParentRow(this.Table.ParentRelations["Donor_Donation1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Donor_Donation1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Status_MapRow Status_MapRow {
-                get {
-                    return ((Status_MapRow)(this.GetParentRow(this.Table.ParentRelations["R_241"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["R_241"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public StoreRow StoreRow {
-                get {
-                    return ((StoreRow)(this.GetParentRow(this.Table.ParentRelations["Store_Donation1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Store_Donation1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAddress2Null() {
-                return this.IsNull(this.tableDonations_Per_Store.Address2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAddress2Null() {
-                this[this.tableDonations_Per_Store.Address2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Donation_PickUp_ScheduleRow[] GetDonation_PickUp_ScheduleRows() {
-                if ((this.Table.ChildRelations["Donation_Donation_PickUp_Schedule1"] == null)) {
-                    return new Donation_PickUp_ScheduleRow[0];
-                }
-                else {
-                    return ((Donation_PickUp_ScheduleRow[])(base.GetChildRows(this.Table.ChildRelations["Donation_Donation_PickUp_Schedule1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ItemRow[] GetItemRows() {
-                if ((this.Table.ChildRelations["Item_Donation1"] == null)) {
-                    return new ItemRow[0];
-                }
-                else {
-                    return ((ItemRow[])(base.GetChildRows(this.Table.ChildRelations["Item_Donation1"])));
+                    this[this.tableDonations_Per_Store.PickUp_Window_StartColumn] = value;
                 }
             }
         }
@@ -19159,18 +18707,8 @@ SELECT Zip_Code_Range_ID, Store_ID, ZipCode FROM ZipCode_Range WHERE (Zip_Code_R
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Donations_Per_Store";
-            tableMapping.ColumnMappings.Add("Store_ID", "Store_ID");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Donation_ID", "Donation_ID");
-            tableMapping.ColumnMappings.Add("Donor_ID", "Donor_ID");
-            tableMapping.ColumnMappings.Add("Status_Map_ID", "Status_Map_ID");
-            tableMapping.ColumnMappings.Add("Address", "Address");
-            tableMapping.ColumnMappings.Add("Address2", "Address2");
-            tableMapping.ColumnMappings.Add("City", "City");
-            tableMapping.ColumnMappings.Add("State", "State");
-            tableMapping.ColumnMappings.Add("ZipCode", "ZipCode");
-            tableMapping.ColumnMappings.Add("Bypass_Flag", "Bypass_Flag");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("PickUp_Window_Start", "PickUp_Window_Start");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19178,40 +18716,40 @@ SELECT Zip_Code_Range_ID, Store_ID, ZipCode FROM ZipCode_Range WHERE (Zip_Code_R
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::HabitatReStoreWFApp.Properties.Settings.Default.Habitat_Restore_V2ConnectionString;
+            this._connection.ConnectionString = global::HabitatReStoreWFApp.Properties.Settings.Default.Habitat_Restore_V2ConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Store.Store_ID, Store.Name, Donation.Donation_ID, Donation.Donor_ID, Donation.Status_Map_ID, Donation.Address, Donation.Address2, Donation.City, Donation.State, Donation.ZipCode, Donation.Bypass_Flag, 
-                         Status_Map.Description
-FROM            Donation INNER JOIN
-                         Store ON Donation.Store_ID = Store.Store_ID INNER JOIN
-                         Status_Map ON Donation.Status_Map_ID = Status_Map.Status_Map_ID";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        Store.Store_ID, Store.Name, Donation.Donation_ID, Donation.Donor_ID, Donation.Status_Map_ID, Donation.Address, Donation.Address2, Donation.City, Donation.State, Donation.ZipCode, Donation.Bypass_Flag, 
-                         Status_Map.Description, Donation_PickUp_Schedule.PickUp_Window_Start
-FROM            Donation INNER JOIN
-                         Store ON Donation.Store_ID = Store.Store_ID INNER JOIN
-                         Status_Map ON Donation.Status_Map_ID = Status_Map.Status_Map_ID INNER JOIN
-                         Donation_PickUp_Schedule ON Donation.Donation_ID = Donation_PickUp_Schedule.Donation_ID
-WHERE Donation_PickUp_Schedule.PickUp_Window_Start >= @Date AND Donation_PickUp_Schedule.PickUp_Window_Start < DATEADD(day, 1, @Date)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PickUp_Window_Start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "dbo.usp_ReportDonationByStore";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateTo", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFrom", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable dataTable) {
+        public virtual int Fill(Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable dataTable, global::System.Nullable<global::System.DateTime> DateTo, global::System.Nullable<global::System.DateTime> DateFrom) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((DateTo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateTo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(DateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -19223,34 +18761,20 @@ WHERE Donation_PickUp_Schedule.PickUp_Window_Start >= @Date AND Donation_PickUp_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable GetData() {
+        public virtual Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable GetData(global::System.Nullable<global::System.DateTime> DateTo, global::System.Nullable<global::System.DateTime> DateFrom) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable dataTable = new Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByDate(Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable dataTable, System.DateTime Date) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Date));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
+            if ((DateTo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateTo.Value));
             }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable GetDataByDate(System.DateTime Date) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Date));
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(DateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable dataTable = new Habitat_Restore_V2DataSet.Donations_Per_StoreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

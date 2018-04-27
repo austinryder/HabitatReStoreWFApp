@@ -156,7 +156,7 @@
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart2_CategoryGroup">
+              <Group Name="Chart2_CategoryGroup1">
                 <GroupExpressions>
                   <GroupExpression>=Fields!Name.Value</GroupExpression>
                 </GroupExpressions>
@@ -173,20 +173,23 @@
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>Donation ID</Label>
+              <Label>Name</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="Donation_ID">
+            <ChartSeries Name="Name">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Count(Fields!Donation_ID.Value)</Y>
+                    <Y>=Count(Fields!Name.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style />
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontWeight>Medium</FontWeight>
+                    </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                     <Position>Top</Position>
@@ -410,7 +413,7 @@
         <DataSetName>DonationsPerStore</DataSetName>
         <Top>2.155in</Top>
         <Left>0.27431in</Left>
-        <Height>4.40278in</Height>
+        <Height>5.40278in</Height>
         <Width>8.4375in</Width>
         <ZIndex>5</ZIndex>
         <Style>
@@ -423,7 +426,7 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>6.80778in</Height>
+    <Height>7.55778in</Height>
     <Style />
   </Body>
   <Width>9.27431in</Width>
@@ -451,53 +454,13 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Store_ID">
-          <DataField>Store_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="Name">
           <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Donation_ID">
-          <DataField>Donation_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Donor_ID">
-          <DataField>Donor_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Status_Map_ID">
-          <DataField>Status_Map_ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Address">
-          <DataField>Address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Address2">
-          <DataField>Address2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="City">
-          <DataField>City</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="State">
-          <DataField>State</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ZipCode">
-          <DataField>ZipCode</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Bypass_Flag">
-          <DataField>Bypass_Flag</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="PickUp_Window_Start">
+          <DataField>PickUp_Window_Start</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

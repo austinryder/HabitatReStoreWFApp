@@ -22,20 +22,9 @@ namespace HabitatReStoreWFApp
 
         private void frmDonationsReport_Load(object sender, EventArgs e)
         {
-            /*
-            Donations_Per_StoreTableAdapter.Fill(Habitat_Restore_V2DataSet.Donations_Per_Store);
-            Donations_Per_StoreBindingSource.DataSource = Donations_Per_StoreTableAdapter.GetData();
-
-            //refresh report
-            reportViewer.LocalReport.ReportEmbeddedResource = "HabitatReStoreWFApp.Reports.DonationsPerStore.rdlc";
-            reportViewer.LocalReport.SetParameters(new ReportParameter("Date", DateTime.Today.ToString("MM/dd/yyyy")));
-            reportViewer.ProcessingMode = ProcessingMode.Local;
-            reportViewer.RefreshReport();
-
-            btnPrint.Enabled = true;
-            */
-
             cboView.SelectedIndex = 0;
+            pickDateTo.Value = DateTime.Today;
+            pickDateFrom.Value = DateTime.Today;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -57,39 +46,41 @@ namespace HabitatReStoreWFApp
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             bool nodata = false;
-            DateTime date;
+            DateTime dateTo, dateFrom;
             string title;
-
-            Donations_Per_StoreTableAdapter.Fill(Habitat_Restore_V2DataSet.Donations_Per_Store);
+            string dateLabel = "";
 
             if (cboView.SelectedIndex == 1)
             {
-                date = pickDate.Value.Date;
-                title = "Donations Per Store - Daily";
+                dateTo = pickDateTo.Value.Date;
+                dateFrom = pickDateFrom.Value.Date;
+                title = "Donations Per Store";
 
-                if (Donations_Per_StoreTableAdapter.GetDataByDate(date).Count > 0)
+                if (Donations_Per_StoreTableAdapter.GetData(dateTo, dateFrom).Count > 0)
                 {
-                    Donations_Per_StoreBindingSource.DataSource = Donations_Per_StoreTableAdapter.GetDataByDate(date);
+                    Donations_Per_StoreBindingSource.DataSource = Donations_Per_StoreTableAdapter.GetData(dateTo, dateFrom);
+                    dateLabel = dateFrom.ToString("MM/dd/yyyy") + " - " + dateTo.ToString("MM/dd/yyyy");
                 }
                 else
                 {
-                    MessageBox.Show("There were no donations for this day.");
+                    MessageBox.Show("There were no donations over this time period");
                     nodata = true;
                 }
             }
             else
             {
-                date = DateTime.Today;
                 title = "Donations Per Store - Total";
 
-                Donations_Per_StoreBindingSource.DataSource = Donations_Per_StoreTableAdapter.GetData();
+                //adds year to today - because some donations are scheduled in advance
+                Donations_Per_StoreBindingSource.DataSource = Donations_Per_StoreTableAdapter.GetData(DateTime.Today.AddYears(1), null);
+                dateLabel = DateTime.Today.ToString("MM/dd/yyyy");
             }
 
             if (!nodata)
             {
                 //refresh report
                 reportViewer.LocalReport.ReportEmbeddedResource = "HabitatReStoreWFApp.Reports.DonationsPerStore.rdlc";
-                reportViewer.LocalReport.SetParameters(new ReportParameter("Date", date.ToString("MM/dd/yyyy")));
+                reportViewer.LocalReport.SetParameters(new ReportParameter("Date", dateLabel));
                 reportViewer.LocalReport.SetParameters(new ReportParameter("ReportTitle", title));
                 reportViewer.ProcessingMode = ProcessingMode.Local;
                 reportViewer.RefreshReport();
@@ -103,12 +94,16 @@ namespace HabitatReStoreWFApp
             if (cboView.SelectedIndex == 1)
             {
                 lblDate.Visible = true;
-                pickDate.Visible = true;
+                pickDateFrom.Visible = true;
+                lblDate2.Visible = true;
+                pickDateTo.Visible = true;
             }
             else
             {
                 lblDate.Visible = false;
-                pickDate.Visible = false;
+                pickDateFrom.Visible = false;
+                lblDate2.Visible = false;
+                pickDateTo.Visible = false;
             }
         }
     }

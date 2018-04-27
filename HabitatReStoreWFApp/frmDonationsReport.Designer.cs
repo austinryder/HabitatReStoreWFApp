@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.Donations_Per_StoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Habitat_Restore_V2DataSet = new HabitatReStoreWFApp.Habitat_Restore_V2DataSet();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -37,12 +37,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.Donations_Per_StoreTableAdapter = new HabitatReStoreWFApp.Habitat_Restore_V2DataSetTableAdapters.Donations_Per_StoreTableAdapter();
-            this.pickDate = new System.Windows.Forms.DateTimePicker();
+            this.pickDateFrom = new System.Windows.Forms.DateTimePicker();
             this.lblDate = new System.Windows.Forms.Label();
             this.cboView = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.Donations_Per_StoreTableAdapter = new HabitatReStoreWFApp.Habitat_Restore_V2DataSetTableAdapters.Donations_Per_StoreTableAdapter();
+            this.lblDate2 = new System.Windows.Forms.Label();
+            this.pickDateTo = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Donations_Per_StoreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Habitat_Restore_V2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,9 +62,9 @@
             // 
             // reportViewer
             // 
-            reportDataSource2.Name = "DonationsPerStore";
-            reportDataSource2.Value = this.Donations_Per_StoreBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DonationsPerStore";
+            reportDataSource1.Value = this.Donations_Per_StoreBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "HabitatReStoreWFApp.Reports.DonationsPerStore.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(12, 136);
             this.reportViewer.Name = "reportViewer";
@@ -112,18 +114,14 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // Donations_Per_StoreTableAdapter
+            // pickDateFrom
             // 
-            this.Donations_Per_StoreTableAdapter.ClearBeforeFill = true;
-            // 
-            // pickDate
-            // 
-            this.pickDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickDate.Location = new System.Drawing.Point(371, 100);
-            this.pickDate.Name = "pickDate";
-            this.pickDate.Size = new System.Drawing.Size(200, 26);
-            this.pickDate.TabIndex = 37;
+            this.pickDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pickDateFrom.Location = new System.Drawing.Point(378, 100);
+            this.pickDateFrom.Name = "pickDateFrom";
+            this.pickDateFrom.Size = new System.Drawing.Size(127, 26);
+            this.pickDateFrom.TabIndex = 37;
             // 
             // lblDate
             // 
@@ -131,9 +129,9 @@
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(312, 102);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(53, 24);
+            this.lblDate.Size = new System.Drawing.Size(60, 24);
             this.lblDate.TabIndex = 38;
-            this.lblDate.Text = "Date:";
+            this.lblDate.Text = "From:";
             // 
             // cboView
             // 
@@ -141,7 +139,7 @@
             this.cboView.FormattingEnabled = true;
             this.cboView.Items.AddRange(new object[] {
             "Total Donations",
-            "Donations By Day"});
+            "Donations Over Time Period"});
             this.cboView.Location = new System.Drawing.Point(75, 102);
             this.cboView.Name = "cboView";
             this.cboView.Size = new System.Drawing.Size(215, 28);
@@ -169,15 +167,40 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
+            // Donations_Per_StoreTableAdapter
+            // 
+            this.Donations_Per_StoreTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblDate2
+            // 
+            this.lblDate2.AutoSize = true;
+            this.lblDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate2.Location = new System.Drawing.Point(533, 102);
+            this.lblDate2.Name = "lblDate2";
+            this.lblDate2.Size = new System.Drawing.Size(38, 24);
+            this.lblDate2.TabIndex = 43;
+            this.lblDate2.Text = "To:";
+            // 
+            // pickDateTo
+            // 
+            this.pickDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pickDateTo.Location = new System.Drawing.Point(577, 100);
+            this.pickDateTo.Name = "pickDateTo";
+            this.pickDateTo.Size = new System.Drawing.Size(127, 26);
+            this.pickDateTo.TabIndex = 42;
+            // 
             // frmDonationsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(943, 604);
+            this.Controls.Add(this.lblDate2);
+            this.Controls.Add(this.pickDateTo);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboView);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.pickDate);
+            this.Controls.Add(this.pickDateFrom);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox1);
@@ -190,11 +213,13 @@
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.btnBack, 0);
             this.Controls.SetChildIndex(this.btnPrint, 0);
-            this.Controls.SetChildIndex(this.pickDate, 0);
+            this.Controls.SetChildIndex(this.pickDateFrom, 0);
             this.Controls.SetChildIndex(this.lblDate, 0);
             this.Controls.SetChildIndex(this.cboView, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.btnGenerate, 0);
+            this.Controls.SetChildIndex(this.pickDateTo, 0);
+            this.Controls.SetChildIndex(this.lblDate2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Donations_Per_StoreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Habitat_Restore_V2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -211,12 +236,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPrint;
         private Habitat_Restore_V2DataSet Habitat_Restore_V2DataSet;
-        private System.Windows.Forms.BindingSource Donations_Per_StoreBindingSource;
-        private Habitat_Restore_V2DataSetTableAdapters.Donations_Per_StoreTableAdapter Donations_Per_StoreTableAdapter;
-        private System.Windows.Forms.DateTimePicker pickDate;
+        private System.Windows.Forms.DateTimePicker pickDateFrom;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ComboBox cboView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.BindingSource Donations_Per_StoreBindingSource;
+        private Habitat_Restore_V2DataSetTableAdapters.Donations_Per_StoreTableAdapter Donations_Per_StoreTableAdapter;
+        private System.Windows.Forms.Label lblDate2;
+        private System.Windows.Forms.DateTimePicker pickDateTo;
     }
 }

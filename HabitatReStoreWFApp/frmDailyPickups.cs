@@ -31,6 +31,7 @@ namespace HabitatReStoreWFApp
         private void frmDailyPickups_Load(object sender, EventArgs e)
         {
             InitializePickers();
+            pickDate.Value = DateTime.Today;
         }
 
         private void InitializePickers()
@@ -67,14 +68,9 @@ namespace HabitatReStoreWFApp
             Store selectedStore = (Store)cboStore.SelectedItem;
             int numPickups = Convert.ToInt32(nudNumPickups.Value);
 
-            var donationSchedules = (from dps in db.Donation_PickUp_Schedules
-                                    where dps.Completed == false &&
-                                    dps.PickUp_Window_Start.Date == pickDate.Value.Date &&
-                                    dps.Donation.Store.Store_ID == selectedStore.Store_ID
-                                    orderby dps.PickUp_Window_Start descending
-                                    select dps).Take(numPickups);
+            var donationSchedules = db.usp_ReportPickUpByStore(selectedStore.Store_ID, pickDate.Value.Date);
 
-            schedules = donationSchedules.ToList();
+            schedules = donationSchedules.Take(numPickups).ToList();
             schedules.Reverse();
 
             List<Donation> donations = new List<Donation>();

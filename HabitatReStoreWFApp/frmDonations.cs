@@ -98,6 +98,8 @@ namespace HabitatReStoreWFApp
         private void cboViewStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetAllDonations();
+            btnNext.Enabled = true;
+            btnPrevious.Enabled = false;
         }
 
         private void GetAllDonations()
@@ -137,11 +139,6 @@ namespace HabitatReStoreWFApp
         {
             selectedDonation = allDonations[donationIndex];
 
-            var items = from i in db.Items
-                        where i.Donation_ID == selectedDonation.Donation_ID
-                        select i;
-            selectedItems = items.ToList();
-
             txtDonationID.Text = selectedDonation.Donation_ID.ToString();
             txtDonorID.Text = selectedDonation.Donor_ID.ToString();
             cboStore.SelectedItem = selectedDonation.Store;
@@ -150,6 +147,19 @@ namespace HabitatReStoreWFApp
             txtZipCode.Text = selectedDonation.ZipCode;
             txtFName.Text = selectedDonation.Donor.First_Name;
             txtLName.Text = selectedDonation.Donor.Last_Name;
+
+            try
+            {
+                var items = from i in db.Items
+                            where i.Donation_ID == selectedDonation.Donation_ID
+                            select i;
+                selectedItems = items.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to retrieve items.");
+                Console.WriteLine(ex);
+            }
         }
 
         private void DisplayItem(int itemsIndex)
@@ -332,10 +342,10 @@ namespace HabitatReStoreWFApp
             {
                 case (Keys.Left):
                     btnPrevious.PerformClick();
-                    break;
+                    return true;
                 case (Keys.Right):
                     btnNext.PerformClick();
-                    break;
+                    return true;
             }
 
             return base.ProcessCmdKey(ref msg, keyData);

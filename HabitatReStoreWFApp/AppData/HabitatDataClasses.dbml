@@ -20,7 +20,7 @@
     </Type>
   </Table>
   <Table Name="dbo.Donation_PickUp_Schedule" Member="Donation_PickUp_Schedules">
-    <Type Name="Donation_PickUp_Schedule">
+    <Type Name="Donation_PickUp_Schedule" Id="ID1">
       <Column Name="Donation_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="PickUp_Window_Start" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="PickUp_Window_End" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -286,5 +286,10 @@
     <Parameter Name="Donation_Image" Parameter="donation_Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
     <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(255)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_ReportPickUpByStore" Method="usp_ReportPickUpByStore">
+    <Parameter Name="StoreID" Parameter="storeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PickUpDate" Parameter="pickUpDate" Type="System.DateTime" DbType="Date" />
+    <ElementType IdRef="ID1" />
   </Function>
 </Database>
