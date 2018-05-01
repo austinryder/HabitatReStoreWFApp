@@ -30,9 +30,11 @@ namespace HabitatReStoreWFApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(baseForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAllDonationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volunteersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAllVolunteersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volunteerTimesheetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +42,8 @@ namespace HabitatReStoreWFApp
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsPerStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyDonationPickupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donorDonationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.volunteerHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,8 +57,7 @@ namespace HabitatReStoreWFApp
             this.reportsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip.Size = new System.Drawing.Size(1026, 50);
+            this.menuStrip.Size = new System.Drawing.Size(684, 33);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "mnuMain";
             // 
@@ -65,15 +67,22 @@ namespace HabitatReStoreWFApp
             this.viewAllDonationsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.donationsToolStripMenuItem.Name = "donationsToolStripMenuItem";
-            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(159, 44);
+            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(110, 29);
             this.donationsToolStripMenuItem.Text = "&Donations";
             // 
             // viewAllDonationsToolStripMenuItem
             // 
             this.viewAllDonationsToolStripMenuItem.Name = "viewAllDonationsToolStripMenuItem";
-            this.viewAllDonationsToolStripMenuItem.Size = new System.Drawing.Size(346, 44);
+            this.viewAllDonationsToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
             this.viewAllDonationsToolStripMenuItem.Text = "View All &Donations";
             this.viewAllDonationsToolStripMenuItem.Click += new System.EventHandler(this.viewAllDonationsToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(243, 30);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // volunteersToolStripMenuItem
             // 
@@ -82,27 +91,27 @@ namespace HabitatReStoreWFApp
             this.volunteerTimesheetsToolStripMenuItem,
             this.inputTimesheetToolStripMenuItem});
             this.volunteersToolStripMenuItem.Name = "volunteersToolStripMenuItem";
-            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(163, 44);
+            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.volunteersToolStripMenuItem.Text = "&Volunteers";
             // 
             // viewAllVolunteersToolStripMenuItem
             // 
             this.viewAllVolunteersToolStripMenuItem.Name = "viewAllVolunteersToolStripMenuItem";
-            this.viewAllVolunteersToolStripMenuItem.Size = new System.Drawing.Size(378, 44);
+            this.viewAllVolunteersToolStripMenuItem.Size = new System.Drawing.Size(265, 30);
             this.viewAllVolunteersToolStripMenuItem.Text = "View All &Volunteers";
             this.viewAllVolunteersToolStripMenuItem.Click += new System.EventHandler(this.viewAllVolunteersToolStripMenuItem_Click);
             // 
             // volunteerTimesheetsToolStripMenuItem
             // 
             this.volunteerTimesheetsToolStripMenuItem.Name = "volunteerTimesheetsToolStripMenuItem";
-            this.volunteerTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(378, 44);
+            this.volunteerTimesheetsToolStripMenuItem.Size = new System.Drawing.Size(265, 30);
             this.volunteerTimesheetsToolStripMenuItem.Text = "Volunteer &Timesheets";
             this.volunteerTimesheetsToolStripMenuItem.Click += new System.EventHandler(this.volunteerTimesheetsToolStripMenuItem_Click);
             // 
             // inputTimesheetToolStripMenuItem
             // 
             this.inputTimesheetToolStripMenuItem.Name = "inputTimesheetToolStripMenuItem";
-            this.inputTimesheetToolStripMenuItem.Size = new System.Drawing.Size(378, 44);
+            this.inputTimesheetToolStripMenuItem.Size = new System.Drawing.Size(265, 30);
             this.inputTimesheetToolStripMenuItem.Text = "&Input Timesheet";
             this.inputTimesheetToolStripMenuItem.Click += new System.EventHandler(this.inputTimesheetToolStripMenuItem_Click);
             // 
@@ -110,41 +119,51 @@ namespace HabitatReStoreWFApp
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.donationsPerStoreToolStripMenuItem,
-            this.dailyDonationPickupsToolStripMenuItem});
+            this.dailyDonationPickupsToolStripMenuItem,
+            this.donorDonationsToolStripMenuItem,
+            this.volunteerHoursToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(126, 44);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
             this.reportsToolStripMenuItem.Text = "&Reports";
             // 
             // donationsPerStoreToolStripMenuItem
             // 
             this.donationsPerStoreToolStripMenuItem.Name = "donationsPerStoreToolStripMenuItem";
-            this.donationsPerStoreToolStripMenuItem.Size = new System.Drawing.Size(398, 44);
+            this.donationsPerStoreToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
             this.donationsPerStoreToolStripMenuItem.Text = "Donations per &Store";
             this.donationsPerStoreToolStripMenuItem.Click += new System.EventHandler(this.donationsPerStoreToolStripMenuItem_Click);
             // 
             // dailyDonationPickupsToolStripMenuItem
             // 
             this.dailyDonationPickupsToolStripMenuItem.Name = "dailyDonationPickupsToolStripMenuItem";
-            this.dailyDonationPickupsToolStripMenuItem.Size = new System.Drawing.Size(398, 44);
+            this.dailyDonationPickupsToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
             this.dailyDonationPickupsToolStripMenuItem.Text = "Daily Donation &Pickups";
             this.dailyDonationPickupsToolStripMenuItem.Click += new System.EventHandler(this.dailyDonationPickupsToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
+            // donorDonationsToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(346, 44);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.donorDonationsToolStripMenuItem.Name = "donorDonationsToolStripMenuItem";
+            this.donorDonationsToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.donorDonationsToolStripMenuItem.Text = "&Donor Donations";
+            this.donorDonationsToolStripMenuItem.Click += new System.EventHandler(this.donorDonationsToolStripMenuItem_Click);
+            // 
+            // volunteerHoursToolStripMenuItem
+            // 
+            this.volunteerHoursToolStripMenuItem.Name = "volunteerHoursToolStripMenuItem";
+            this.volunteerHoursToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.volunteerHoursToolStripMenuItem.Text = "&Volunteer Hours";
+            this.volunteerHoursToolStripMenuItem.Click += new System.EventHandler(this.volunteerHoursToolStripMenuItem_Click_1);
             // 
             // baseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1026, 709);
+            this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.menuStrip);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "baseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Habitat for Humanity ReStore";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -166,5 +185,7 @@ namespace HabitatReStoreWFApp
         private System.Windows.Forms.ToolStripMenuItem donationsPerStoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyDonationPickupsToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem donorDonationsToolStripMenuItem;
+        private ToolStripMenuItem volunteerHoursToolStripMenuItem;
     }
 }

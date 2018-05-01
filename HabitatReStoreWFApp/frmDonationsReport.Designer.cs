@@ -62,6 +62,9 @@
             // 
             // reportViewer
             // 
+            this.reportViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DonationsPerStore";
             reportDataSource1.Value = this.Donations_Per_StoreBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);

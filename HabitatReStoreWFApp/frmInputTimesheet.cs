@@ -24,9 +24,13 @@ namespace HabitatReStoreWFApp
 
         private void InitializeItems()
         {
+            //selects volunteers that have signed up for volunteer categories
             var volunteerResult = from v in db.Volunteers
+                                  where (from vc in db.Volunteer_Categories
+                                         where vc.Volunteer_ID == v.Volunteer_ID
+                                         select vc).Any()
                                   select v;
-            
+
             cboVolunteerID.DataSource = volunteerResult;
             cboVolunteerID.DisplayMember = "Volunteer_ID";
 
@@ -116,8 +120,8 @@ namespace HabitatReStoreWFApp
                     Volunteer_ID = selectedVolunteer.Volunteer_ID,
                     Store_ID = selectedStore.Store_ID,
                     Category_Type_ID = selectedCategory.Category_Type_ID,
-                    Sign_In = pickTimeIn.Value,
-                    Sign_Out = pickTimeOut.Value
+                    Sign_In = timeIn,
+                    Sign_Out = timeOut
                 };
 
                 try
@@ -150,6 +154,11 @@ namespace HabitatReStoreWFApp
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmInputTimesheet_Load_1(object sender, EventArgs e)
         {
 
         }

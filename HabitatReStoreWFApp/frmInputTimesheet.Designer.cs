@@ -297,6 +297,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmInputTimesheet";
+            this.Load += new System.EventHandler(this.frmInputTimesheet_Load_1);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);

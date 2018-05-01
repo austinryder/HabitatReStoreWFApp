@@ -90,5 +90,21 @@ namespace HabitatReStoreWFApp
                 Application.Exit();
             }
         }
+
+        private void donorDonationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDonorDonationsReport donorDonations = new frmDonorDonationsReport();
+            Hide();
+            donorDonations.ShowDialog();
+            Show();
+        }
+
+        private void volunteerHoursToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmVolunteerHoursReport volunteerHours = new frmVolunteerHoursReport();
+            Hide();
+            volunteerHours.ShowDialog();
+            Show();
+        }
     }
 }

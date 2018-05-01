@@ -115,6 +115,12 @@
     <Compile Include="frmDonationsReport.Designer.cs">
       <DependentUpon>frmDonationsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDonorDonationsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonorDonationsReport.Designer.cs">
+      <DependentUpon>frmDonorDonationsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInputTimesheet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +145,20 @@
     <Compile Include="frmVolunteerHours.Designer.cs">
       <DependentUpon>frmVolunteerHours.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVolunteerHoursReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVolunteerHoursReport.Designer.cs">
+      <DependentUpon>frmVolunteerHoursReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVolunteers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVolunteers.Designer.cs">
       <DependentUpon>frmVolunteers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Habitat_Restore_V2DataSet.cs">
+      <DependentUpon>Habitat_Restore_V2DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Habitat_Restore_V2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -153,8 +168,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmDonorDonationsReport.resx">
+      <DependentUpon>frmDonorDonationsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVolunteerHoursReport.resx">
+      <DependentUpon>frmVolunteerHoursReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\DailyPickups.rdlc" />
     <EmbeddedResource Include="Reports\DonationsPerStore.rdlc" />
+    <EmbeddedResource Include="Reports\DonorDonations.rdlc" />
+    <EmbeddedResource Include="Reports\VolunteerHours.rdlc" />
     <None Include="AppData\HabitatDataClasses.dbml.layout">
       <DependentUpon>HabitatDataClasses.dbml</DependentUpon>
     </None>
